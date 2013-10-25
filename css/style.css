@@ -1,0 +1,639 @@
+body {
+	padding-top: 30px;
+	background: url(../images/bg.jpg);
+	min-width: 1550px;
+}
+
+* {
+	font-family: Helvetica;
+}
+.factionHeader {
+	text-align: center;
+	vertical-align: middle;
+	width: 208px;
+}
+.factionHeader.factionNeutral {
+	font-weight: bold;
+	font-size: large;
+}
+.factionAnarchs,
+.template_Anarch {
+	background-color: #F6BCA4;
+}
+@font-face {
+	font-family: ana;
+	src: url(BRUSHOFANARCHYOUTLINE.ttf);
+}
+.factionHeader.factionAnarchs {
+	font-family: ana;
+	font-size: large;
+}
+.factionCriminal,
+.template_Criminal {
+	background-color: #B8C4D2;
+}
+@font-face {
+	font-family: crim;
+	src: url(DreamingofLilian.ttf);
+}
+.factionHeader.factionCriminal {
+	font-family: crim;
+	font-size: x-large;
+}
+.factionShapers,
+.template_Shaper {
+	background-color: #CBD5BD;
+}
+@font-face {
+	font-family: shap;
+	src: url(DEREZ___.TTF);
+}
+.factionHeader.factionShapers {
+	font-family: shap;
+	font-size: x-large;
+}
+.factionHaas-Bioroid,
+.template_Haas-Bioroid {
+	background-color: #C7B1C7;
+}
+@font-face {
+	font-family: hb;
+	src: url(NeoGen.ttf);
+}
+.factionHeader.factionHaas-Bioroid {
+	font-family: hb;
+	font-size: x-large;
+}
+.factionJinteki,
+.template_Jinteki {
+	background-color: #D6B9B3;
+}
+@font-face {
+	font-family: jin;
+	src: url(Individigital.ttf);
+}
+.factionHeader.factionJinteki {
+	font-family: jin;
+	font-size: x-large;
+}
+.factionNBN,
+.template_NBN {
+	background-color: #E6B783;
+}
+@font-face {
+	font-family: nbn;
+	src: url(SFSportsNight.ttf);
+}
+.factionHeader.factionNBN {
+	font-family: nbn;
+	font-size: x-large;
+}
+.factionWeyland,
+.template_Weyland {
+	background-color: #CACDC6;
+}
+@font-face {
+	font-family: wey;
+	src: url(Stark.ttf);
+}
+.factionHeader.factionWeyland {
+	font-family: wey;
+	font-size: x-large;
+}
+.factionNeutral,
+.template_Neutral {
+	background-color: #E8E9EF;
+}
+td {
+	vertical-align: top;
+	border-radius: 5px 25px 5px 5px;
+	padding: 5px;
+	margin: 2px;
+}
+.cardTypeName {
+	background-color: white;
+	border-radius: 5px 25px 5px 5px;
+	float: right;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+.card {
+	margin: 0;
+	padding: 0;
+	clear: both;
+	margin: 2px;
+	padding: 3px;
+}
+.highlight {
+	background-color: #ff0;
+	border-radius: 9px;
+}
+a {
+	color: #000;
+}
+
+.excess {
+	font-weight: bold;
+}
+
+.unavailable {
+	visibility: hidden;
+}
+
+#save {
+	text-align: center;
+}
+#save input {
+	width: 50%;
+}
+
+#controls {
+	left: 0;
+	position: fixed;
+	top: 0;
+	height: 30px;
+	z-index: 10;
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+
+.cycleList {
+	font-weight: bold;
+}
+.setList {
+	font-weight: normal;
+}
+.blockSettings {
+	font-size: .8em;
+	font-weight: normal;
+	color: red !important; /* For some reason I can't seem to override bootstrap's active-state coloring */
+	text-decoration: none;
+}
+
+.blockSettings:hover {
+	text-decoration: underline;
+}
+
+#previewContainer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 30;
+	background-color: #fff;
+	width: 300px;
+}
+
+.previewControls {
+	background: #444444; /* Old browsers */
+	background: -moz-linear-gradient(top,  #444444 0%, #333333 44%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444444), color-stop(44%,#333333), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #444444 0%,#333333 44%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #444444 0%,#333333 44%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #444444 0%,#333333 44%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #444444 0%,#333333 44%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	color: white;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.previewControls:hover {
+	background: #a90329; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+	font-weight: bold;
+}
+
+#templateContainer {
+	display: none;
+}
+
+#previewImage {
+	position: absolute;
+	bottom: 0;
+	left: -300px;
+}
+
+.previewState0 #previewImage {
+	display: none;
+}
+
+.fromTemplate {
+	padding: 5px;
+	border: 1px solid black;
+	border-top: none;
+}
+
+.fromTemplate .cardTitle {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.fromTemplate .cardSubline {
+	margin-bottom: 5px;
+	font-size: .8em;
+}
+
+.fromTemplate .cardType {
+	font-weight: bold;
+}
+
+.fromTemplate .cardText {
+	padding-bottom: 5px;
+}
+
+.fromTemplate a {
+	color: blue;
+}
+
+.previewState1 #previewShown,
+.previewState0 #previewHidden {
+	display: block;
+}
+
+.previewState0 #previewShown,
+.previewState1 #previewHidden {
+	display: none;
+}
+
+#preview.hide {
+	display: none;
+}
+
+.im_first {
+	background-color: white;
+}
+
+.modalContainer {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+.modal {
+	border-radius: 5px 25px 5px 5px;
+	padding: 20px;
+	background-color: #147;
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	width: 300px;
+}
+.modal textarea {
+	width: 250px;
+	height: 300px;
+	margin-right: 20px;
+}
+.modal.warning {
+	background-color: #ff0;
+}
+#import {
+	margin-left: -116px;
+	margin-top: -65px;
+}
+#importClose {
+	float: right;
+}
+#inspire {
+	width: 650px;
+	height: 440px;
+	margin-left: -310px;
+	margin-top: -220px;
+}
+.inspireImage {
+	display: inline-block;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+#inspireControls {
+	text-align: center;
+	position: absolute;
+	width: 650px;
+	bottom: 15px;
+}
+
+.cardTableCardInfo {
+	display: inline-block;
+	float: left;
+	line-height: 15px;
+	margin-left: 5px;
+	width: 175px;
+	/*word-break: break-all;*/
+}
+
+.cardTable .btn {
+	float: left;
+	clear: left;
+}
+
+body {
+	line-height: normal;
+}
+
+.cardTable {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+.cardName {
+	/*font-weight: bold;*/
+	font-size:1.2em;
+}
+
+.cardSubInfo {
+	font-style: italic;
+	font-size: .8em;
+}
+
+.cardTableCardEntry {
+	margin-bottom: 5px;
+}
+.clear {
+	clear: both;
+}
+
+.filter {
+	width: 80px;
+}
+.filterContainer {
+	position: relative;
+	background-color: #147;
+	color: white;
+	width: 50px;
+	border: 2px solid red;
+}
+.filterContainerHeader,
+.filterHeader {
+	font-weight: bold;
+	display: block;
+	clear: both;
+}
+.filterHeader {
+	margin-top: 10px;
+}
+.filterList {
+	display: none;
+	/*background-color: #147;*/
+	background-color: rgba(17, 34, 119, 0.85);
+	color: white;
+	position: absolute;
+	overflow: hidden;
+	margin: 5px 0 0 -7px;
+	width: 600px;
+	border: 2px solid red;
+	z-index: 100;
+	/*opacity:0.85;*/
+}
+.filterContainer:hover .filterList {
+	display: block;
+}
+.filterLabel {
+	display: inline-block;
+	width: 150px;
+	margin: 0;
+}
+.filterLabel input {
+	margin: 0;
+}
+.filterColumns {
+	-moz-column-count: 4;
+	-webkit-column-count: 4;
+	column-count: 4;
+}
+
+
+.round {
+	border-radius: 5px 25px 5px 5px;
+	padding: 5px;
+}
+
+.shown-false {
+	display: none;
+}
+.filterContainer .btn {
+	float: right;
+	margin-right: 10px;
+}
+
+/* Buttons */
+.Identity .qty1.btn.add,
+.qty3.btn.add,
+.btn.add.addable-false,
+.qty0.btn.remove {
+	visibility: hidden;
+}
+
+.btn-success.btn.add.qty1 {
+	background: #62c462; /* Old browsers */
+	background: -moz-linear-gradient(top,  #62c462 0%, #51a351 48%, #deed12 52%, #bfcc10 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(48%,#51a351), color-stop(52%,#deed12), color-stop(100%,#bfcc10)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #62c462 0%,#51a351 48%,#deed12 52%,#bfcc10 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #62c462 0%,#51a351 48%,#deed12 52%,#bfcc10 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #62c462 0%,#51a351 48%,#deed12 52%,#bfcc10 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #62c462 0%,#51a351 48%,#deed12 52%,#bfcc10 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c462', endColorstr='#bfcc10',GradientType=0 ); /* IE6-9 */
+}
+.btn-success.btn.add.qty2 {
+	background: #deed12; /* Old browsers */
+	background: -moz-linear-gradient(top,  #deed12 0%, #bfcc10 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deed12), color-stop(100%,#bfcc10)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #deed12 0%,#bfcc10 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #deed12 0%,#bfcc10 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #deed12 0%,#bfcc10 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #deed12 0%,#bfcc10 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deed12', endColorstr='#bfcc10',GradientType=0 ); /* IE6-9 */
+}
+/* End Buttons */
+
+/* Deck */
+#deck {
+	position: fixed;
+	top: 35px;
+	right: 5px;
+	border: 3px solid black;
+	/*background-color: #fff;*/
+	min-width: 300px;
+	z-index: 20;
+	padding: 2px;
+}
+
+#deck .card {
+	margin: 0;
+	padding: 0;
+}
+#deck.factionCriminal     .card.factionCriminal     .influence,
+#deck.factionShapers      .card.factionShapers      .influence,
+#deck.factionAnarchs      .card.factionAnarchs      .influence,
+#deck.factionNBN          .card.factionNBN          .influence,
+#deck.factionJinteki      .card.factionJinteki      .influence,
+#deck.factionHaas-Bioroid .card.factionHaas-Bioroid .influence,
+#deck.factionWeyland      .card.factionWeyland      .influence {
+	display: none;
+}
+#deckScrollContainer {
+	overflow: auto;
+	margin-top: 10px;
+}
+.deckIdentity,
+.deckStat {
+	/*display: block;*/
+}
+#deck ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+#deck .quantity {
+	display: block;
+	float: right;
+	margin-left: 5px;
+}
+.valid-false {
+	color: red;
+}
+/* End Deck */
+
+/* Deck Manager */
+#manageDropdown li {
+	padding-top: 5px;
+}
+.deleteDeckButton {
+	float: right;
+}
+#deckList {
+	overflow: auto;
+	width: 382px;
+	max-height: 200px;
+	margin-bottom: 10px;
+}
+#saveDeckContainer {
+	margin-bottom: 10px;
+}
+#saveDeckContainer input {
+	width: 306px;
+}
+/* End Deck Manager */
+
+/* Menu */
+.menuOption {
+	display: inline-block;
+	position: relative;
+}
+.altMenu {
+	float: right;
+	padding: 2px 10px;
+}
+.dropdownHeader {
+	padding-top: 5px;
+	margin-right: 20px;
+}
+.dropdownBody {
+	position: absolute;
+	background: #147;
+	width: 225px;
+	padding: 10px;
+	border-radius: 5px 25px 5px 5px;
+	margin: 0 10px;
+	font-weight: normal;
+	display: none;
+}
+.dropdownContainer:hover .dropdownBody {
+	display: block;
+}
+.dropdownBody ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.menuOption input {
+	margin: 0;
+}
+
+.menuOption label {
+	display: inline-block;
+}
+#manageDropdown {
+	width: 400px;
+}
+.added {
+	color: #5f5;
+}
+.removed {
+	color: #f55;
+}
+.textExport {
+	width: 350px;
+	height: 600px;
+}
+.textExport textarea {
+	width: 100%;
+	height: 100%;
+}
+/* End Menu */
+
+/* Begin Sprites */
+
+.sprite {
+	background:url(../images/icons/sprites.png);
+	display: inline-block;
+	height: 18px;
+	vertical-align: text-bottom;
+}
+
+.sprite.click {
+	background-position: 0 0;
+	width: 17px;
+}
+.sprite.credits {
+	background-position: 0 -18px;
+	width: 10px;
+}
+.sprite.link {
+	background-position: 0 -36px;
+	width: 15px;
+}
+.sprite.memory_unit {
+	background-position: 0 -54px;
+	width: 22px;
+}
+.sprite.recurring_credits {
+	background-position: 0 -72px;
+	width: 17px;
+}
+.sprite.subroutine {
+	background-position: 0 -90px;
+	width: 12px;
+}
+.sprite.trash {
+	background-position: 0 -108px;
+	width: 17px;
+}
+.sprite.unique {
+	background-position: 0 -126px;
+	width: 7px;
+}
+
+/* End Sprites */

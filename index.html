@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html ng-app ng-csp>
+<head>
+	<title>Little Chiba</title>
+	<script src="scripts/info.js"></script>
+	<script src="scripts/cards.js"></script>
+	<script src="scripts/deck.js"></script>
+	<script src="scripts/cardMeta.js"></script>
+	<script src="libraries/angular.1.1.5.min.js"></script>
+	<script src="scripts/cardController.js"></script>
+	<script src="scripts/vault.js"></script>
+	<script src="scripts/ajax.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="cardController" style="min-height: {{ bodyHeight }}px">
+	<div id="controls">
+		<div class="menuOption dropdownContainer">
+			<div class="dropdownHeader">Select Sets</div>
+			<div class="dropdownBody" id="setDropdown">
+				<ul class="cycleList" ng-repeat="(cycleName, set) in sets">
+					<li>
+						{{ cycleName }}
+						<a href="javascript:void(0)" class="blockSettings" ng-click="massToggle('{{ cycleName }}', true)">All</a>
+						<a href="javascript:void(0)" class="blockSettings" ng-click="massToggle('{{ cycleName }}', false)">None</a>
+						<ul class="setList">
+							<li ng-repeat="(setKey, setName) in set">
+								<label>
+									<input type="checkbox" ng-model="setCheckState[setName]"> {{ setName }}
+								</label>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="menuOption dropdownContainer">
+			<div class="dropdownHeader">
+				Manage decks
+			</div>
+			<div class="dropdownBody" id="manageDropdown">
+				<div class="shown-{{ deck.notEmpty }}" id="saveDeckContainer">
+					<input ng-model="deck.name" type="text" placeholder="{{ deck.identity.name }}">
+					<button class="btn" ng-click="saveDeck()">Save</button>
+				</div>
+				<ul id="deckList">
+					<li ng-repeat="vaultDeck in decks">
+						<button class="btn btn-success btn-mini deleteLoadButton" ng-click="loadDeck(vaultDeck)">Load</button>
+						<button class="btn btn-mini deleteLoadButton shown-{{ deck.notEmpty }}" ng-click="setBase(vaultDeck)">Base</button>
+						{{ vaultDeck.name }}
+						<button class="btn btn-danger btn-mini deleteDeckButton" ng-click="deleteDeck(vaultDeck)"><i class="icon-remove"></i></button>
+						<div class="clear"></div>
+					</li>
+				</ul>
+				<button class="btn shown-{{ deck.notEmpty }}" id="newDeckButton" ng-click="newDeck()">New deck</button>
+				<span class="shown-{{ !deck.notEmpty }}">
+					Click the green + button next to an identity to start a new deck.
+				</span>
+				<button class="btn" ng-click="deckImportModalShown = true">Import a text decklist</button>
+			</div>
+		</div>
+		<div class="menuOption dropdownContainer">
+			<div class="dropdownHeader">
+				Diff Deck
+			</div>
+			<div class="dropdownBody">
+				<div class="shown-{{ !deck.baseSet }}">
+					Set a base deck from the Manage Decks menu to view the diff
+				</div>
+				<div class="shown-{{ deck.baseSet }}">
+					Diff from {{ deck.base.name }}...
+					<div class="shown-{{ !deck.hasDiff }}">
+						No difference
+					</div>
+					<div class="shown-{{ deck.hasDiff }}">
+						<ul>
+							<li class="removed" ng-repeat="card in deck.diff.removed">
+								{{ card.qty }}x {{ card.name }}
+							</li>
+							<li class="added" ng-repeat="card in deck.diff.added">
+								{{ card.qty }}x {{ card.name }}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menuOption dropdownContainer shown-{{ deck.notEmpty }}">
+			<div class="dropdownHeader shown-{{ deck.notEmpty }}">
+				Text export
+			</div>
+			<div class="dropdownBody" id="manageDropdown">
+				<textarea readonly class="textExport">{{ deck.textExport }}</textarea>
+			</div>
+		</div>
+		<div class="menuOption">
+			<label>
+				<input type="checkbox" ng-model="showAttributes"> Show attributes
+			</label>
+			<label>
+				<input type="checkbox" ng-model="showSets"> Show sets
+			</label>
+			<label>
+				<input type="checkbox" ng-model="imagesShown"> Show images
+			</label>
+		</div>
+		<div class="menuOption altMenu">
+			<a href="http://www.boardgamegeek.com/blogpost/17888/little-chiba-the-android-netrunner-deck-builder" class="btn btn-mini" target="_blank">Feedback &amp; updates</a>
+		</div>
+	</div>
+	<div id="previewContainer" class="previewState{{previewState}}">
+		<div id="previewShown">
+			<div class="previewControls" ng-click="previewState = 0">Hide Preview</div>
+			<!-- <img src="{{ previewLink }}"> -->
+			<div ng-bind-html-unsafe="previewText"></div>
+		</div>
+		<div id="previewHidden">
+			<div class="previewControls" ng-click="previewState = 1">Show Preview</div>
+		</div>
+		<div id="previewImage" class="shown-{{ imagesShown }}">
+			<img src="{{ previewImage }}">
+		</div>
+	</div>
+	<div id="deck" class="shown-{{ deck.notEmpty }} faction{{ deck.identity.faction }}">
+		<div class="deckName">
+			{{ deck.name }}
+		</div>
+		<div class="deckStat cardTotal">
+			<strong class="valid-{{ deck.enoughCards }}">Cards:</strong> {{ deck.cardCount }} / {{ deck.minCards }}
+		</div>
+		<div class="deckStat agendaPointsTotal shown-{{ deck.isCorp }}">
+			<strong class="valid-{{ deck.enoughAgendaPoints }}">Agenda points:</strong> {{ deck.totalPoints }} / {{ deck.minPoints }}
+		</div>
+		<div class="deckStat influencePointsTotal">
+			<strong class="valid-{{ deck.withinInfluenceLimit }}">Influence points:</strong> {{ deck.influenceTotal }} / {{ deck.influenceAvailable }}
+		</div>
+
+		<div class="deckIdentity" ng-click="setPreviewLink(deck.identity)">
+			<strong>Identity:</strong>
+			{{ deck.identity.name }}
+		</div>
+
+		<div id="deckScrollContainer" style="max-height: {{ getMaxDeckHeight() }}px">
+			<ul ng-repeat="(typeName, typeHash) in deck.cardsByType">
+				<li class="deckTypeHeader">
+					<strong>{{ typeName }}</strong>
+					<span class="quantity">
+						({{ typeHash.qty }})
+					</span>
+				</li>
+				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="setPreviewLink(cardName)">
+					<button class="btn btn-mini btn-success add qty{{qty}}" ng-click="addCard(cardName)"><i class="icon-plus"></i></button>
+					<button class="btn btn-mini btn-danger remove qty{{qty}}" ng-click="removeCard(cardName)"><i class="icon-minus"></i></button>
+					<span class="quantity">
+						{{ qty }}x
+					</span>
+					{{ cardName }}
+					<span class="influence">
+						{{ getInfluenceString(cardName, qty) }}
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<table ng-repeat="side in sides" class="cardTable">
+		<tr>
+			<td>
+				<div class="filterContainer round">
+					<span class="filterContainerHeader">Filter...</span>
+					<div class="filterList round">
+						<div class="filterGroup" ng-repeat="(filterType, filterHash) in side.filters">
+							<span class="filterHeader">
+								{{ filterType }}
+							</span>
+							<div class="filterColumns">
+								<label ng-repeat="(className, hash) in filterHash" class="filterLabel">
+									<input type="checkbox" ng-model="side.checkState[className]"> {{ hash.name }}
+								</label>
+							</div>
+						</div>
+						<div class="filterHeader">
+							<div class="maxInfluenceSelector">
+								Max out-of-faction influence cost:
+								<select ng-model="side.maxInfluence" ng-options="i for i in maxInfluenceOptions" class="input-mini"></select>
+							</div>
+							<button class="btn btn-mini" ng-click="clearFilters(side)">
+								<i class="icon-remove"></i>
+								Clear filters
+							</button>
+						</div>
+					</div>
+				</div>
+			</td>
+			<td ng-repeat="faction in side.factions" class="factionHeader faction{{faction}}">
+				{{ faction }}
+			</td>
+		</tr>
+		<tr ng-repeat="type in side.cardTypes">
+			<td class="cardTypeName">{{ type }}</td>
+			<td ng-repeat="faction in side.factions" class="faction{{ faction }}">
+				<div ng-repeat="card in getCards(faction, type)" class="cardTableCardEntry shown-{{isFiltered(card)}} {{ card.type }} {{ card.att }}">
+					<button class="btn btn-mini btn-success qty{{getQty(card)}} add addable-{{ isAddable(card) }}" ng-click="addCard(card)"><i class="icon-plus"></i></button>
+					<div ng-click="setPreviewLink(card)" class="cardTableCardInfo">
+						<div class="cardName">
+							{{ card.name }}
+						</div>
+						<div class="cardSubInfo">
+							{{ getSubLine(card) }}
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="modalContainer shown-{{ deckImportModalShown }}">
+		<div class="modal">
+			<textarea ng-model="importText"></textarea><br>
+			<button class="btn btn-success btn-mini" ng-click="importDecklist()">Import</button>
+			<button class="btn btn-danger btn-mini" ng-click="deckImportModalShown = false">Cancel</button>
+		</div>
+		<div class="modal warning shown-{{ importWarningsShown }}">
+			The following warnings were encountered while importing your decklist:
+			<ul>
+				<li ng-repeat="warning in importWarnings">
+					{{ warning }}
+				</li>
+			</ul>
+			<button class="btn btn-mini btn-warning" ng-click="importWarningsShown = false">Ok</button>
+		</div>
+	</div>
+	<div id="templateContainer">
+		<div id="Runner_Identity">
+			<div class="fromTemplate runner_identity template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardLink">Link: CARDBASELINK</span> |
+					<span class="cardMinDeck">Deck: CARDMINDECK</span> |
+					<span class="cardMaxInfluence">Inf: CARDMAXINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Corp_Identity">
+			<div class="fromTemplate corp_identity template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardMinDeck">Deck: CARDMINDECK</span> |
+					<span class="cardMaxInfluence">Inf: CARDMAXINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Agenda">
+			<div class="fromTemplate agenda template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardAdvancement">Adv: CARDADVANCEMENT</span> |
+					<span class="cardScore">Points: CARDSCORE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Asset">
+			<div class="fromTemplate asset template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Rez: CARDCOST</span> |
+					<span class="cardTrash">Trash: CARDTRASH</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="ICE">
+			<div class="fromTemplate ice template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Rez: CARDCOST</span> |
+					<span class="cardStrength">Strength: CARDSTRENGTH</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Operation">
+			<div class="fromTemplate operation template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Cost: CARDCOST</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Upgrade">
+			<div class="fromTemplate upgrade template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Rez: CARDCOST</span> |
+					<span class="cardTrash">Trash: CARDTRASH</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Event">
+			<div class="fromTemplate event template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Cost: CARDCOST</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Hardware">
+			<div class="fromTemplate hardware template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Install: CARDCOST</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Program">
+			<div class="fromTemplate program template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Install: CARDCOST</span> |
+					<span class="cardMemory">Memory: CARDMEMORY</span> |
+					<span class="cardStrength">Strength: CARDSTRENGTH</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+		<div id="Resource">
+			<div class="fromTemplate resource template_CARDFACTION">
+				<div class="cardTitle">CARDNAME</div>
+				<div class="cardSubline">
+					<span class="cardType">CARDFACTION CARDTYPE:</span>
+					<span class="cardSubtype">CARDSUBTYPE</span> |
+					<span class="cardCost">Install: CARDCOST</span> |
+					<span class="cardInfluence">Inf: CARDINFLUENCE</span>
+				</div>
+				<div class="cardText">CARDTEXT</div>
+				<div class="cardLink">
+					<a href="CARDLINK" target="_blank">View more info on Netrunnercards.info</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
