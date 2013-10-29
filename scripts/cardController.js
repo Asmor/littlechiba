@@ -22,10 +22,8 @@ function cardController($scope) {
 	$scope.importWarnings = [];
 	$scope.imagesShown = false;
 	$scope.previewImage = "";
-        
-        // Load all cards
-        // This function will populate foreignCardData variable
-        Ajax.getAllCards();
+
+	Ajax.getAllCards();
 
 	var i, j;
 	for (i in $scope.sets) {
