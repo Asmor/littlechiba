@@ -20,3 +20,21 @@ Ajax.getCardData = function (key) {
 	script.setAttribute("src", Ajax.baseUrl + key + Ajax.jsonpWrapper);
 	document.body.appendChild(script)
 };
+
+// Get all corpo and runner cards in one query and fill foreignCardData global variable.
+// If all works as intended then Ajax.getCardData will never need to fire.
+// 
+// This will be called automaticly in cardControllers constructor
+Ajax.getAllCards = function() {
+    var query = Ajax.baseUrl + "d:r|c?jsonp=Ajax.massImport";
+    var script = document.createElement("script");
+    script.onload = Ajax.destroy;
+    script.setAttribute("src", query);
+    document.body.appendChild(script)
+}
+
+Ajax.massImport = function(data) {    
+    for(i in data) {
+        foreignCardData[data[i].indexkey] = data[i];
+    }
+}
