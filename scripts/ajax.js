@@ -2,7 +2,7 @@
 /* global scope */
 
 var Ajax = {};
-Ajax.baseUrl = "http://netrunnercards.info/api/search/";
+Ajax.baseUrl = "http://netrunnerdb.com/api/search/";
 Ajax.jsonpWrapper = "?jsonp=Ajax.callback";
 
 Ajax.callback = function (cardData) {
