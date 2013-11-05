@@ -7,7 +7,7 @@ Ajax.jsonpWrapper = "?jsonp=Ajax.callback";
 
 Ajax.callback = function (cardData) {
 	var card = cardData[0],
-		key = card.indexkey;
+		key = card.code;
 	foreignCardData[key] = card;
 	scope.setPreviewLink(key);
 	scope.$apply();
@@ -39,6 +39,6 @@ Ajax.getAllCards = function() {
 Ajax.massImport = function(data) {    
 	for (var i in data) {
 		if (!data.hasOwnProperty(i)) { continue; }
-		foreignCardData[data[i].indexkey] = data[i];
+		foreignCardData[data[i].code] = data[i];
 	}
 };
