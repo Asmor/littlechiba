@@ -2968,6 +2968,190 @@ cards.push(new Card({
 	nriKey: "04020"
 }));
 
+// Spin 2 - Second Thoughts
+
+cards.push(new Card({
+	name: "Bishop",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.spin2,
+	attributes: "Caïssa iceDisruption",
+	nriKey: "04021"
+}));
+cards.push(new Card({
+	name: "Scheherazade",
+	type: program,
+	faction: ana,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "Daemon credits",
+	nriKey: "04022"
+}));
+cards.push(new Card({
+	name: "Hard at Work",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.spin2,
+	attributes: "credits",
+	nriKey: "04023"
+}));
+cards.push(new Card({
+	name: "Recon",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.spin2,
+	attributes: "Run",
+	nriKey: "04024"
+}));
+cards.push(new Card({
+	name: "Copycat",
+	type: program,
+	faction: crim,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "",
+	nriKey: "04025"
+}));
+cards.push(new Card({
+	name: "Leviathan",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.spin2,
+	attributes: "Icebreaker Decoder",
+	nriKey: "04026"
+}));
+cards.push(new Card({
+	name: "Eureka!",
+	type: event,
+	faction: shap,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "Double costReduction",
+	nriKey: "04027"
+}));
+cards.push(new Card({
+	name: "Record Reconstructor",
+	type: hardware,
+	faction: shap,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "deckDisruption",
+	nriKey: "04028"
+}));
+cards.push(new Card({
+	name: "Prepaid VoicePAD",
+	type: hardware,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin2,
+	attributes: "Gear credits",
+	nriKey: "04029"
+}));
+cards.push(new Card({
+	name: "Wotan",
+	type: ice,
+	faction: hb,
+	influence: 5,
+	set: setNames.spin2,
+	attributes: "Barrier Bioroid endRun trash brainDamage creditDisruption",
+	nriKey: "04030"
+}));
+cards.push(new Card({
+	name: "Hellion Alpha Test",
+	type: operation,
+	faction: hb,
+	influence: 3,
+	set: setNames.spin2,
+	attributes: "BlackOps resourceDisruption trace badPublicity",
+	nriKey: "04031"
+}));
+cards.push(new Card({
+	name: "Clone Retirement",
+	type: agenda,
+	faction: jin,
+	set: setNames.spin2,
+	agendaPoints: 1,
+	attributes: "Initiative badPublicity",
+	nriKey: "04032"
+}));
+cards.push(new Card({
+	name: "Swordsman",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "Sentry Destroyer AP trash netDamage",
+	nriKey: "04033"
+}));
+cards.push(new Card({
+	name: "Shipment from SanSan",
+	type: operation,
+	faction: nbn,
+	influence: 1,
+	set: setNames.spin2,
+	attributes: "Double advancementCounters",
+	nriKey: "04034"
+}));
+cards.push(new Card({
+	name: "Muckraker",
+	type: ice,
+	faction: nbn,
+	influence: 3,
+	set: setNames.spin2,
+	attributes: "Sentry Tracer Illicit badPublicity trace tags endRun",
+	nriKey: "04035"
+}));
+cards.push(new Card({
+	name: "The Cleaners",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 3,
+	set: setNames.spin2,
+	attributes: "meatDamage",
+	nriKey: "04036"
+}));
+cards.push(new Card({
+	name: "Elizabeth Mills",
+	type: asset,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin2,
+	attributes: "Executive badPublicity trash",
+	nriKey: "04037"
+}));
+cards.push(new Card({
+	name: "Off the Grid",
+	type: upgrade,
+	faction: wey,
+	influence: 3,
+	set: setNames.spin2,
+	attributes: "",
+	nriKey: "04038"
+}));
+cards.push(new Card({
+	name: "Profiteering",
+	type: agenda,
+	faction: neut,
+	influence: 0,
+	agendaPoints: 1,
+	set: setNames.spin2,
+	attributes: "badPublicity credits",
+	nriKey: "04039"
+}));
+cards.push(new Card({
+	name: "Restructure",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin2,
+	attributes: "Transaction credits",
+	nriKey: "04040"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
