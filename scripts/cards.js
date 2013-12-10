@@ -3152,6 +3152,188 @@ cards.push(new Card({
 	nriKey: "04040"
 }));
 
+// Spin 3 - Mala Tempora
+
+cards.push(new Card({
+	name: "Reina Roja",
+	type: identity,
+	faction: ana,
+	set: setNames.spin3,
+	attributes: "Cyborg G-mod iceDisruption link",
+	nriKey: "04041"
+}))
+cards.push(new Card({
+	name: "Deep Red",
+	type: hardware,
+	faction: ana,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "Console memory caïssa",
+	nriKey: "04042"
+}))
+cards.push(new Card({
+	name: "Knight",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.spin3,
+	attributes: "Icebreaker AI Caïssa",
+	nriKey: "04043"
+}))
+cards.push(new Card({
+	name: "Running Interference",
+	type: event,
+	faction: crim,
+	influence: 4,
+	set: setNames.spin3,
+	attributes: "Double Run iceDisruption",
+	nriKey: "04044"
+}))
+cards.push(new Card({
+	name: "Expert Schedule Analyzer",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.spin3,
+	attributes: "handDisruption",
+	nriKey: "04045"
+}))
+cards.push(new Card({
+	name: "Grifter",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "Virtual credits",
+	nriKey: "04046"
+}))
+cards.push(new Card({
+	name: "Woman in the Red Dress",
+	type: resource,
+	faction: shap,
+	influence: 4,
+	set: setNames.spin3,
+	attributes: "Connection Virtual handDisruption deckDisruption",
+	nriKey: "04047"
+}))
+cards.push(new Card({
+	name: "Torch",
+	type: program,
+	faction: shap,
+	influence: 4,
+	set: setNames.spin3,
+	attributes: "Icebreaker Decoder",
+	nriKey: "04048"
+}))
+cards.push(new Card({
+	name: "Raymond Flint",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin3,
+	attributes: "Connection badPublicity expose handDisruption",
+	nriKey: "04049"
+}))
+cards.push(new Card({
+	name: "Isabel McGuire",
+	type: asset,
+	faction: hb,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "Executive bounce",
+	nriKey: "04050"
+}))
+cards.push(new Card({
+	name: "Hudson 1.0",
+	type: ice,
+	faction: hb,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "CodeGate Bioroid",
+	nriKey: "04051"
+}))
+cards.push(new Card({
+	name: "Accelerated Diagnostics",
+	type: operation,
+	faction: hb,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "",
+	nriKey: "04052"
+}))
+cards.push(new Card({
+	name: "Unorthodox Predictions",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 1,
+	set: setNames.spin3,
+	attributes: "Security",
+	nriKey: "04053"
+}))
+cards.push(new Card({
+	name: "Sundew",
+	type: asset,
+	faction: jin,
+	influence: 3,
+	set: setNames.spin3,
+	attributes: "credits",
+	nriKey: "04054"
+}))
+cards.push(new Card({
+	name: "City Surveillance",
+	type: asset,
+	faction: nbn,
+	influence: 4,
+	set: setNames.spin3,
+	attributes: "tags creditDisruption",
+	nriKey: "04055"
+}))
+cards.push(new Card({
+	name: "Snoop",
+	type: ice,
+	faction: nbn,
+	influence: 2,
+	set: setNames.spin3,
+	attributes: "Sentry Tracer handDisruption",
+	nriKey: "04056"
+}))
+cards.push(new Card({
+	name: "Ireress",
+	type: ice,
+	faction: wey,
+	influence: 1,
+	set: setNames.spin3,
+	attributes: "badPublicity creditDisruption",
+	nriKey: "04057"
+}))
+cards.push(new Card({
+	name: "Power Shutdown",
+	type: operation,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin3,
+	attributes: "GrayOps trash",
+	nriKey: "04058"
+}))
+cards.push(new Card({
+	name: "Paper Wall",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin3,
+	attributes: "Barrier endRun",
+	nriKey: "04059"
+}))
+cards.push(new Card({
+	name: "Interns",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin3,
+	attributes: "Double recursion",
+	nriKey: "04060"
+}))
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
