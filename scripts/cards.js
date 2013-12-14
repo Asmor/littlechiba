@@ -3214,7 +3214,7 @@ cards.push(new Card({
 	influence: 4,
 	set: setNames.spin3,
 	attributes: "Connection Virtual handDisruption deckDisruption",
-	nriKey: "04047"
+	nriKey: "04048"
 }))
 cards.push(new Card({
 	name: "Torch",
@@ -3223,7 +3223,7 @@ cards.push(new Card({
 	influence: 4,
 	set: setNames.spin3,
 	attributes: "Icebreaker Decoder",
-	nriKey: "04048"
+	nriKey: "04047"
 }))
 cards.push(new Card({
 	name: "Raymond Flint",
