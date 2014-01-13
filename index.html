@@ -104,6 +104,9 @@
 			<label>
 				<input type="checkbox" ng-model="imagesShown"> Show images
 			</label>
+			<label ng-show="imagesShown">
+				<input type="checkbox" ng-model="hoverImages"> ...on hover
+			</label>
 		</div>
 		<div class="menuOption altMenu">
 			<a href="http://www.boardgamegeek.com/blogpost/17888/little-chiba-the-android-netrunner-deck-builder" class="btn btn-mini" target="_blank">Feedback &amp; updates</a>
@@ -135,7 +138,7 @@
 			<strong class="valid-{{ deck.withinInfluenceLimit }}">Influence points:</strong> {{ deck.influenceTotal }} / {{ deck.influenceAvailable }}
 		</div>
 
-		<div class="deckIdentity" ng-click="setPreviewLink(deck.identity)">
+		<div class="deckIdentity" ng-click="setPreviewLink(deck.identity, true)" ng-mouseover="hoverPreview(deck.identity)">
 			<strong>Identity:</strong>
 			{{ deck.identity.name }}
 		</div>
@@ -148,7 +151,7 @@
 						({{ typeHash.qty }})
 					</span>
 				</li>
-				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="setPreviewLink(cardName)">
+				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="setPreviewLink(cardName, true)" ng-mouseover="hoverPreview(cardName)">
 					<button class="btn btn-mini btn-success add qty{{qty}}" ng-click="addCard(cardName)"><i class="icon-plus"></i></button>
 					<button class="btn btn-mini btn-danger remove qty{{qty}}" ng-click="removeCard(cardName)"><i class="icon-minus"></i></button>
 					<span class="quantity">
@@ -200,7 +203,7 @@
 			<td ng-repeat="faction in side.factions" class="faction{{ faction }}">
 				<div ng-repeat="card in getCards(faction, type)" class="cardTableCardEntry shown-{{isFiltered(card)}} {{ card.type }} {{ card.att }}">
 					<button class="btn btn-mini btn-success qty{{getQty(card)}} add addable-{{ isAddable(card) }}" ng-click="addCard(card)"><i class="icon-plus"></i></button>
-					<div ng-click="setPreviewLink(card)" class="cardTableCardInfo">
+					<div ng-click="setPreviewLink(card, true)" ng-mouseover="hoverPreview(card)" class="cardTableCardInfo">
 						<div class="cardName">
 							{{ card.name }}
 						</div>

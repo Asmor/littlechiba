@@ -20,7 +20,8 @@ function cardController($scope) {
 	$scope.importText = "";
 	$scope.importWarningsShown = false;
 	$scope.importWarnings = [];
-	$scope.imagesShown = false;
+	$scope.imagesShown = true;
+	$scope.hoverImages = true;
 	$scope.previewImage = "";
 
 	Ajax.getAllCards();
@@ -146,6 +147,11 @@ function cardController($scope) {
 		}
 		return filters.join(" ");
 	};
+	$scope.hoverPreview = function (card) {
+		if ($scope.hoverImages) {
+			$scope.setPreviewLink(card);
+		}
+	};
 	$scope.importDecklist = function () {
 		var warnings = scope.deck.textImport(scope.importText);
 		if (warnings) {
@@ -250,7 +256,13 @@ function cardController($scope) {
 		$scope.deckScrollPosition = document.getElementById("deckScrollContainer").scrollTop;
 	};
 
-	$scope.setPreviewLink = function (card) {
+	$scope.setPreviewLink = function (card, wasClicked) {
+		if (!$scope.imagesShown) { return; }
+
+		if (wasClicked) {
+			$scope.hoverImages = false;
+		}
+
 		var data;
 		if (typeof card === "string") {
 			if (card.match(/^\d{5}$/)) {
