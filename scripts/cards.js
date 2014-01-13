@@ -3161,7 +3161,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Cyborg G-mod iceDisruption link",
 	nriKey: "04041"
-}))
+}));
 cards.push(new Card({
 	name: "Deep Red",
 	type: hardware,
@@ -3170,7 +3170,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Console memory caïssa",
 	nriKey: "04042"
-}))
+}));
 cards.push(new Card({
 	name: "Knight",
 	type: program,
@@ -3179,7 +3179,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Icebreaker AI Caïssa",
 	nriKey: "04043"
-}))
+}));
 cards.push(new Card({
 	name: "Running Interference",
 	type: event,
@@ -3188,7 +3188,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Double Run iceDisruption",
 	nriKey: "04044"
-}))
+}));
 cards.push(new Card({
 	name: "Expert Schedule Analyzer",
 	type: program,
@@ -3197,7 +3197,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "handDisruption",
 	nriKey: "04045"
-}))
+}));
 cards.push(new Card({
 	name: "Grifter",
 	type: resource,
@@ -3206,7 +3206,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Virtual credits",
 	nriKey: "04046"
-}))
+}));
 cards.push(new Card({
 	name: "Woman in the Red Dress",
 	type: resource,
@@ -3215,7 +3215,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Connection Virtual handDisruption deckDisruption",
 	nriKey: "04048"
-}))
+}));
 cards.push(new Card({
 	name: "Torch",
 	type: program,
@@ -3224,7 +3224,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Icebreaker Decoder",
 	nriKey: "04047"
-}))
+}));
 cards.push(new Card({
 	name: "Raymond Flint",
 	type: resource,
@@ -3233,7 +3233,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Connection badPublicity expose handDisruption",
 	nriKey: "04049"
-}))
+}));
 cards.push(new Card({
 	name: "Isabel McGuire",
 	type: asset,
@@ -3242,7 +3242,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Executive bounce",
 	nriKey: "04050"
-}))
+}));
 cards.push(new Card({
 	name: "Hudson 1.0",
 	type: ice,
@@ -3251,7 +3251,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "CodeGate Bioroid",
 	nriKey: "04051"
-}))
+}));
 cards.push(new Card({
 	name: "Accelerated Diagnostics",
 	type: operation,
@@ -3260,7 +3260,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "",
 	nriKey: "04052"
-}))
+}));
 cards.push(new Card({
 	name: "Unorthodox Predictions",
 	type: agenda,
@@ -3269,7 +3269,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Security",
 	nriKey: "04053"
-}))
+}));
 cards.push(new Card({
 	name: "Sundew",
 	type: asset,
@@ -3278,7 +3278,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "credits",
 	nriKey: "04054"
-}))
+}));
 cards.push(new Card({
 	name: "City Surveillance",
 	type: asset,
@@ -3287,7 +3287,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "tags creditDisruption",
 	nriKey: "04055"
-}))
+}));
 cards.push(new Card({
 	name: "Snoop",
 	type: ice,
@@ -3296,7 +3296,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Sentry Tracer handDisruption",
 	nriKey: "04056"
-}))
+}));
 cards.push(new Card({
 	name: "Ireress",
 	type: ice,
@@ -3305,7 +3305,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "badPublicity creditDisruption",
 	nriKey: "04057"
-}))
+}));
 cards.push(new Card({
 	name: "Power Shutdown",
 	type: operation,
@@ -3314,7 +3314,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "GrayOps trash",
 	nriKey: "04058"
-}))
+}));
 cards.push(new Card({
 	name: "Paper Wall",
 	type: ice,
@@ -3323,7 +3323,7 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Barrier endRun",
 	nriKey: "04059"
-}))
+}));
 cards.push(new Card({
 	name: "Interns",
 	type: operation,
