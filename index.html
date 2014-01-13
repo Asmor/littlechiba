@@ -118,7 +118,7 @@
 			<div class="previewControls" ng-click="previewState = 1">Show Preview</div>
 		</div>
 		<div id="previewImage" class="shown-{{ imagesShown }}">
-			<img src="{{ previewImage }}">
+			<img ng-src="{{ previewImage }}">
 		</div>
 	</div>
 	<div id="deck" class="shown-{{ deck.notEmpty }} faction{{ deck.identity.faction }}">
