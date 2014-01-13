@@ -3332,7 +3332,191 @@ cards.push(new Card({
 	set: setNames.spin3,
 	attributes: "Double recursion",
 	nriKey: "04060"
-}))
+}));
+
+// Spin 4 - True Colors
+
+cards.push(new Card({
+	name: "Keyhole",
+	type: program,
+	faction: ana,
+	influence: 3,
+	set: setNames.spin4,
+	attributes: "deckDisruption trash",
+	nriKey: "04061"
+}));
+cards.push(new Card({
+	name: "Activist Support",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "tags badPublicity",
+	nriKey: "04062"
+}));
+cards.push(new Card({
+	name: "Lawyer Up",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.spin4,
+	attributes: "Double tags cards",
+	nriKey: "04063"
+}));
+cards.push(new Card({
+	name: "Leverage",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "netDamage meatDamage brainDamage",
+	nriKey: "04064"
+}));
+cards.push(new Card({
+	name: "Garrote",
+	type: program,
+	faction: crim,
+	influence: 3,
+	set: setNames.spin4,
+	attributes: "Icebreaker Killer",
+	nriKey: "04065"
+}));
+cards.push(new Card({
+	name: "LLDS Processor",
+	type: hardware,
+	faction: shap,
+	influence: 1,
+	set: setNames.spin4,
+	attributes: "Chip iceBoosting",
+	nriKey: "04066"
+}));
+cards.push(new Card({
+	name: "Sharpshooter",
+	type: program,
+	faction: shap,
+	influence: 1,
+	set: setNames.spin4,
+	attributes: "Icebreaker",
+	nriKey: "04067"
+}));
+cards.push(new Card({
+	name: "Capstone",
+	type: hardware,
+	faction: shap,
+	influence: 3,
+	set: setNames.spin4,
+	attributes: "trash cards",
+	nriKey: "04068"
+}));
+cards.push(new Card({
+	name: "Starlight Crusade Funding",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin4,
+	attributes: "",
+	nriKey: "04069"
+}));
+cards.push(new Card({
+	name: "Rex Campaign",
+	type: asset,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "Advertisement credits badPublicity",
+	nriKey: "04070"
+}));
+cards.push(new Card({
+	name: "Fenris",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "Sentry AP Illicit badPublicity brainDamage endRun",
+	nriKey: "04071"
+}));
+cards.push(new Card({
+	name: "Panic Button",
+	type: upgrade,
+	faction: hb,
+	influence: 1,
+	set: setNames.spin4,
+	attributes: "cards",
+	nriKey: "04072"
+}));
+cards.push(new Card({
+	name: "Shock!",
+	type: asset,
+	faction: jin,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "Ambush netDamage",
+	nriKey: "04073"
+}));
+cards.push(new Card({
+	name: "Tsurugi",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "Sentry AP netDamage endRun",
+	nriKey: "04074"
+}));
+cards.push(new Card({
+	name: "TGTBT",
+	type: agenda,
+	faction: nbn,
+	agendaPoints: 1,
+	set: setNames.spin4,
+	attributes: "Ambush tags",
+	nriKey: "04075"
+}));
+cards.push(new Card({
+	name: "Sweeps Week",
+	type: operation,
+	faction: nbn,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "credits",
+	nriKey: "04076"
+}));
+cards.push(new Card({
+	name: "RSVP",
+	type: ice,
+	faction: nbn,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "CodeGate",
+	nriKey: "04077"
+}));
+cards.push(new Card({
+	name: "Curtain Wall",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "Barrier endRun",
+	nriKey: "04078"
+}));
+cards.push(new Card({
+	name: "Punitive Counterstrike",
+	type: operation,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin4,
+	attributes: "BlackOps trace meatDamage",
+	nriKey: "04079"
+}));
+cards.push(new Card({
+	name: "Veterans Program",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 1,
+	influence: 0,
+	set: setNames.spin4,
+	attributes: "Initiative badPublicity",
+	nriKey: "04080"
+}));
 
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
