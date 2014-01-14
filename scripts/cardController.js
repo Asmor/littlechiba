@@ -133,7 +133,7 @@ function cardController($scope) {
 	$scope.getQty = function (card) {
 		card = getCardByNameOrId(card);
 		
-		var retVal = $scope.deck.cards[card.name] || 0;
+		var retVal = $scope.deck.cards[card.nriKey] || 0;
 		if (card.type === identity
 			&& $scope.deck.identity
 			&& $scope.deck.identity.name === card.name) {
