@@ -21,7 +21,7 @@ function Deck(isBase) {
 
 		for (name in this.cards) {
 			if (this.cards.hasOwnProperty(name)) {
-				var card = getCardByName(name),
+				var card = getCardByNameOrId(name),
 					qty = this.cards[name];
 				if (qty === 0) {
 					delete this.cards[name];
@@ -55,7 +55,7 @@ function Deck(isBase) {
 	}
 	this.add = function (card) {
 		var returnVal;
-		card = getCardByName(card);
+		card = getCardByNameOrId(card);
 		if (card.type === identity) {
 			returnVal = this.setIdentity(card);
 		} else {
@@ -114,7 +114,7 @@ function Deck(isBase) {
 		this.cardQuantitiesByType = {};
 		for (name in this.cards) {
 			if (this.cards.hasOwnProperty(name)) {
-				var card = getCardByName(name);
+				var card = getCardByNameOrId(name);
 				if (!this.cardsByType[card.type]) {
 					this.cardsByType[card.type] = {
 						cards: {},
@@ -138,7 +138,7 @@ function Deck(isBase) {
 		// identity is set
 		for (i in this.cards) {
 			if (this.cards.hasOwnProperty(i)) {
-				c = getCardByName(i);
+				c = getCardByNameOrId(i);
 				if (c.side !== this.identity.side
 					|| (c.type === agenda
 						&& c.faction !== this.identity.faction
@@ -159,9 +159,9 @@ function Deck(isBase) {
 			&& card.faction !== neut) {
 			return false;
 		}
-		this.cards[card.name] = (this.cards[card.name] || 0) + 1;
-		if (this.cards[card.name] > 3) {
-			this.cards[card.name] = 3;
+		this.cards[card.nriKey] = (this.cards[card.nriKey] || 0) + 1;
+		if (this.cards[card.nriKey] > 3) {
+			this.cards[card.nriKey] = 3;
 			return false;
 		}
 		return true;
@@ -186,7 +186,7 @@ function Deck(isBase) {
 
 		for (i in this.cards) {
 			if (!this.cards.hasOwnProperty(i)) { return; }
-			c = getCardByName(i);
+			c = getCardByNameOrId(i);
 			if (!cardsByType[c.type]) {
 				cardsByType[c.type] = [];
 				cardTypes.push(c.type);
@@ -212,17 +212,17 @@ function Deck(isBase) {
 		this.textExport = lines.join("\n");
 	};
 	this.remove = function (card) {
-		card = getCardByName(card);
+		card = getCardByNameOrId(card);
 		if (card.type === identity) {
 			this.identity = null;
 			this.setTableClass();
 			this.reset();
 			return true;
 		}
-		if (!this.cards[card.name]) {
+		if (!this.cards[card.nriKey]) {
 			return false;
 		}
-		this.cards[card.name]--;
+		this.cards[card.nriKey]--;
 		this.recalculate();
 		return true;
 	};
@@ -230,7 +230,7 @@ function Deck(isBase) {
 		var i, inf = 0, card;
 		for (i in this.cards) {
 			if (this.cards.hasOwnProperty(i)) {
-				card = getCardByName(i);
+				card = getCardByNameOrId(i);
 				if (card.faction !== this.identity.faction
 					&& card.influence) {
 					inf += card.influence * this.cards[i];
@@ -243,7 +243,7 @@ function Deck(isBase) {
 		var i, points = 0, card;
 		for (i in this.cards) {
 			if (this.cards.hasOwnProperty(i)) {
-				card = getCardByName(i);
+				card = getCardByNameOrId(i);
 				if (card.agendaPoints) {
 					points += card.agendaPoints * this.cards[i];
 				}
@@ -257,7 +257,7 @@ function Deck(isBase) {
 			return null;
 		}
 		var o = {
-			identity: this.identity.name,
+			identity: this.identity.nriKey,
 			cards: this.cards
 		}, i;
 		for (i in o.cards) {
@@ -276,13 +276,13 @@ function Deck(isBase) {
 			o = s;
 		}
 		this.reset();
-		this.add(getCardByName(o.identity));
+		this.add(getCardByNameOrId(o.identity));
 		if (!this.identity) {
 			return;
 		}
 		for (i in o.cards) {
 			if (o.cards.hasOwnProperty(i)) {
-				card = getCardByName(i);
+				card = getCardByNameOrId(i);
 				if (card) {
 					for (j = 0; j < o.cards[i]; j++) {
 						this.add(card);

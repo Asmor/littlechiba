@@ -5,7 +5,6 @@ function Card(args) {
 	this.faction = args.faction;
 	this.img = args.img;
 	this.influence = args.influence || null;
-	this.key = args.key || args.name.replace(/[\s.]/g, ""); // Just for backwards compatibility; old version was intended to be localized, but never was; stuff was saved with "keys" instead of the actual names.
 	this.name = args.name;
 	this.nriKey = args.nriKey;
 	this.qty = args.qty || 3;
@@ -655,7 +654,6 @@ cards.push(new Card({
 }));
 cards.push(new Card({
 	name: "Kate \"Mac\" McCaffrey",
-	key: "KateMacMcCaffery",
 	type: identity,
 	faction: shap,
 	influence: null,
@@ -2535,7 +2533,7 @@ cards.push(new Card({
 		for (cardName in cards) {
 			if (!cards.hasOwnProperty(cardName)) { continue; }
 
-			card = getCardByName(cardName);
+			card = getCardByNameOrId(cardName);
 
 			if (card.faction === shap) { continue; }
 

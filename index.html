@@ -153,15 +153,15 @@
 						({{ typeHash.qty }})
 					</span>
 				</li>
-				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="previewClick(cardName)" ng-mouseover="previewHover(cardName)">
-					<button class="btn btn-mini btn-success add qty{{qty}}" ng-click="addCard(cardName)"><i class="icon-plus"></i></button>
-					<button class="btn btn-mini btn-danger remove qty{{qty}}" ng-click="removeCard(cardName)"><i class="icon-minus"></i></button>
+				<li ng-repeat="(cardKey, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardKey) }}" ng-click="previewClick(cardKey)" ng-mouseover="previewHover(cardKey)">
+					<button class="btn btn-mini btn-success add qty{{qty}}" ng-click="addCard(cardKey)"><i class="icon-plus"></i></button>
+					<button class="btn btn-mini btn-danger remove qty{{qty}}" ng-click="removeCard(cardKey)"><i class="icon-minus"></i></button>
 					<span class="quantity">
 						{{ qty }}x
 					</span>
-					{{ cardName }}
+					{{ getCardName(cardKey) }}
 					<span class="influence">
-						{{ getInfluenceString(cardName, qty) }}
+						{{ getInfluenceString(cardKey, qty) }}
 					</span>
 				</li>
 			</ul>

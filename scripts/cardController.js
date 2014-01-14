@@ -85,12 +85,16 @@ function cardController($scope) {
 	};
 	$scope.getCardFaction = function (card) {
 		$scope._persist();
-		card = getCardByName(card);
+		card = getCardByNameOrId(card);
 		return card.faction;
 	};
 	$scope.getInfluenceString = function (card, qty) {
-		card = getCardByName(card);
+		card = getCardByNameOrId(card);
 		return card.getInfluenceString(false, qty);
+	};
+	$scope.getCardName = function (card) {
+		card = getCardByNameOrId(card);
+		return card.name;
 	};
 	$scope.getSubLine = function (card) {
 		var toReturn = [],
@@ -127,7 +131,7 @@ function cardController($scope) {
 		return toReturn.join(" - ");
 	};
 	$scope.getQty = function (card) {
-		card = getCardByName(card);
+		card = getCardByNameOrId(card);
 		
 		var retVal = $scope.deck.cards[card.name] || 0;
 		if (card.type === identity
@@ -256,7 +260,7 @@ function cardController($scope) {
 			if (card.match(/^\d{5}$/)) {
 				data = foreignCardData[card]
 			} else {
-				card = getCardByName(card);
+				card = getCardByNameOrId(card);
 				if (card) {
 					data = card.getData()
 				} else {

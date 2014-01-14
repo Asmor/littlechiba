@@ -18,7 +18,7 @@ for (i = 0; i < cards.length; i++) {
 
 	// Build the index
 	cardIndices[c.name] = i;
-	cardIndices[c.key] = i;
+	cardIndices[c.nriKey] = i;
 
 	// Build the list of filters
 	s = c.side;
@@ -39,7 +39,7 @@ for (i = 0; i < cards.length; i++) {
 	}
 }
 
-function getCardByName(name) {
+function getCardByNameOrId(name) {
 	if (!name) {
 		return null;
 	}
