@@ -1,12 +1,21 @@
 angular.module('cardController', ['ngSanitize']);
 
+// Note that the consts have to be strings, because that's what the form elements end up setting the values to
+var // Preview type
+	NONE			= "0",
+	TEXT_ONLY		= "1",
+	IMAGES_ONLY		= "2",
+	IMAGES_AND_TEXT	= "3",
+	// Preview behavior
+	ON_HOVER		= "1",
+	ON_CLICK		= "2";
+
 function cardController($scope) {
 	window.scope = $scope;
 	$scope.bodyHeight = 0;
 	$scope.deck = new Deck();
 	$scope.decks = window.vault.getDecks();
 	$scope.previewLink = "";
-	$scope.previewState = 1; // Show preview by default
 	$scope.setCheckState = {};
 	$scope.sets = sets;
 	$scope.showAttributes = false;
@@ -20,9 +29,9 @@ function cardController($scope) {
 	$scope.importText = "";
 	$scope.importWarningsShown = false;
 	$scope.importWarnings = [];
-	$scope.imagesShown = true;
-	$scope.hoverImages = true;
 	$scope.previewImage = "";
+	$scope.previewType = IMAGES_AND_TEXT;
+	$scope.previewBehavior = ON_HOVER;
 
 	Ajax.getAllCards();
 
@@ -147,11 +156,6 @@ function cardController($scope) {
 		}
 		return filters.join(" ");
 	};
-	$scope.hoverPreview = function (card) {
-		if ($scope.hoverImages) {
-			$scope.setPreviewLink(card);
-		}
-	};
 	$scope.importDecklist = function () {
 		var warnings = scope.deck.textImport(scope.importText);
 		if (warnings) {
@@ -232,37 +236,21 @@ function cardController($scope) {
 			setName = sets[setKey];
 			$scope.setCheckState[setName] = checked;
 		}
-	}
+	};
 	$scope.newDeck = function (deck) {
 		$scope.deck.reset();
 		$scope.deck.name = null;
 	};
-	$scope.removeCard = function (cardKey) {
-		$scope.setDeckScroll();
-		$scope.deck.remove(cardKey);
+	$scope.previewClick = function (card) {
+		$scope.previewBehavior = ON_CLICK;
+		$scope.previewSet(card);
 	};
-	$scope.saveDeck = function () {
-		var name = $scope.deck.name || $scope.deck.identity.name;
-		$scope.vault.store($scope.deck, name);
-		$scope.decks = $scope.vault.getDecks();
-		$scope.deck.name = name;
-	};
-	$scope.setBase = function (deck) {
-		$scope.deck.setBase($scope.vault.retrieve(deck.key));
-		$scope.deck.base.name = deck.name;
-	};
-
-	$scope.setDeckScroll = function () {
-		$scope.deckScrollPosition = document.getElementById("deckScrollContainer").scrollTop;
-	};
-
-	$scope.setPreviewLink = function (card, wasClicked) {
-		if (!$scope.imagesShown) { return; }
-
-		if (wasClicked) {
-			$scope.hoverImages = false;
+	$scope.previewHover = function (card) {
+		if ($scope.previewBehavior === ON_HOVER) {
+			$scope.previewSet(card);
 		}
-
+	};
+	$scope.previewSet = function (card) {
 		var data;
 		if (typeof card === "string") {
 			if (card.match(/^\d{5}$/)) {
@@ -279,13 +267,35 @@ function cardController($scope) {
 			data = card.getData();
 		}
 
-		$scope.previewText = formatCard(data);
-		if ($scope.imagesShown) {
-			$scope.previewImage = "http://netrunnercards.info" + data.imagesrc;
+		if ($scope.previewType === IMAGES_AND_TEXT || $scope.previewType === TEXT_ONLY) {
+			$scope.previewText = formatCard(data);
+		} else {
+			$scope.previewText = "";
 		}
-		return;
-	};
 
+		if ($scope.previewType === IMAGES_AND_TEXT || $scope.previewType === IMAGES_ONLY) {
+			$scope.previewImage = "http://netrunnerdb.com" + data.imagesrc;
+		} else {
+			$scope.previewImage = "";
+		}
+	};
+	$scope.removeCard = function (cardKey) {
+		$scope.setDeckScroll();
+		$scope.deck.remove(cardKey);
+	};
+	$scope.saveDeck = function () {
+		var name = $scope.deck.name || $scope.deck.identity.name;
+		$scope.vault.store($scope.deck, name);
+		$scope.decks = $scope.vault.getDecks();
+		$scope.deck.name = name;
+	};
+	$scope.setBase = function (deck) {
+		$scope.deck.setBase($scope.vault.retrieve(deck.key));
+		$scope.deck.base.name = deck.name;
+	};
+	$scope.setDeckScroll = function () {
+		$scope.deckScrollPosition = document.getElementById("deckScrollContainer").scrollTop;
+	};
 	$scope.showImportWarnings = function (warnings) {
 		scope.importWarnings = warnings;
 		scope.importWarningsShown = true;

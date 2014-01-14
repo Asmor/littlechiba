@@ -102,25 +102,27 @@
 				<input type="checkbox" ng-model="showSets"> Show sets
 			</label>
 			<label>
-				<input type="checkbox" ng-model="imagesShown"> Show images
+				<select ng-model="previewType">
+					<option value="0">Preview disabled</option>
+					<option value="1">Preview text</option>
+					<option value="2">Preview images</option>
+					<option value="3">Preview images and text</option>
+				</select>
 			</label>
-			<label ng-show="imagesShown">
-				<input type="checkbox" ng-model="hoverImages"> ...on hover
+			<label ng-show="previewType">
+				<select ng-model="previewBehavior">
+					<option value="1">on hover</option>
+					<option value="2">on click</option>
+				</select>
 			</label>
 		</div>
 		<div class="menuOption altMenu">
 			<a href="http://www.boardgamegeek.com/blogpost/17888/little-chiba-the-android-netrunner-deck-builder" class="btn btn-mini" target="_blank">Feedback &amp; updates</a>
 		</div>
 	</div>
-	<div id="previewContainer" class="previewState{{previewState}}">
-		<div id="previewShown">
-			<div class="previewControls" ng-click="previewState = 0">Hide Preview</div>
-			<div ng-bind-html-unsafe="previewText"></div>
-		</div>
-		<div id="previewHidden">
-			<div class="previewControls" ng-click="previewState = 1">Show Preview</div>
-		</div>
-		<div id="previewImage" class="shown-{{ imagesShown }}">
+	<div id="previewContainer" ng-show="previewType">
+		<div ng-bind-html-unsafe="previewText" id="textPreviewContainer"></div>
+		<div id="previewImage" ng-show="previewType >= 2">
 			<img ng-src="{{ previewImage }}">
 		</div>
 	</div>
@@ -138,7 +140,7 @@
 			<strong class="valid-{{ deck.withinInfluenceLimit }}">Influence points:</strong> {{ deck.influenceTotal }} / {{ deck.influenceAvailable }}
 		</div>
 
-		<div class="deckIdentity" ng-click="setPreviewLink(deck.identity, true)" ng-mouseover="hoverPreview(deck.identity)">
+		<div class="deckIdentity" ng-click="previewClick(deck.identity)" ng-mouseover="previewHover(deck.identity)">
 			<strong>Identity:</strong>
 			{{ deck.identity.name }}
 		</div>
@@ -151,7 +153,7 @@
 						({{ typeHash.qty }})
 					</span>
 				</li>
-				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="setPreviewLink(cardName, true)" ng-mouseover="hoverPreview(cardName)">
+				<li ng-repeat="(cardName, qty) in typeHash.cards track by $index" class="card faction{{ getCardFaction(cardName) }}" ng-click="previewClick(cardName)" ng-mouseover="previewHover(cardName)">
 					<button class="btn btn-mini btn-success add qty{{qty}}" ng-click="addCard(cardName)"><i class="icon-plus"></i></button>
 					<button class="btn btn-mini btn-danger remove qty{{qty}}" ng-click="removeCard(cardName)"><i class="icon-minus"></i></button>
 					<span class="quantity">
@@ -203,7 +205,7 @@
 			<td ng-repeat="faction in side.factions" class="faction{{ faction }}">
 				<div ng-repeat="card in getCards(faction, type)" class="cardTableCardEntry shown-{{isFiltered(card)}} {{ card.type }} {{ card.att }}">
 					<button class="btn btn-mini btn-success qty{{getQty(card)}} add addable-{{ isAddable(card) }}" ng-click="addCard(card)"><i class="icon-plus"></i></button>
-					<div ng-click="setPreviewLink(card, true)" ng-mouseover="hoverPreview(card)" class="cardTableCardInfo">
+					<div ng-click="previewClick(card)" ng-mouseover="previewHover(card)" class="cardTableCardInfo">
 						<div class="cardName">
 							{{ card.name }}
 						</div>
