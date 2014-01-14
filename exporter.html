@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Little Chiba Exporter</title>
+	<script src="scripts/info.js"></script>
+	<script src="scripts/cards.js"></script>
+	<script src="scripts/vault.js"></script>
+</head>
+<body>
+<script>
+var lookup = {},
+	decks = vault.getDecks();
+// Build lookup table to translate
+for (var i = 0; i < cards.length; i++) {
+	lookup[cards[i].key] = cards[i].nriKey;
+	lookup[cards[i].name] = cards[i].nriKey;
+}
+
+for (i = 0; i < decks.length; i++) {
+	var oldDeck = JSON.parse(vault.retrieve(decks[i].key)),
+		newDeck = translateDeck(oldDeck, decks[i].name);
+
+	if (newDeck) {
+		exportDeck(newDeck);
+	} else {
+		console.log("Error exporting deck:", decks[i].name);
+	}
+}
+
+exportDeck(newDecks[0]);
+
+function translateDeck(oldDeck, name) {
+	var newDeck = {
+			name: name,
+			cards: {}
+		},
+		newCardKey = lookup[oldDeck.identity],
+		errors = 0;
+
+	if (!newCardKey) {
+		console.log("Unable to find identity: ", oldDeck.identity);
+		errors++;
+	}
+
+	newDeck.identity = newCardKey;
+
+	for (var i in oldDeck.cards) {
+		if (!oldDeck.cards.hasOwnProperty(i)) { continue; }
+		newCardKey = lookup[i];
+		if (!newCardKey) {
+			console.log("Unable to find card: ", i);
+			errors++;
+			continue;
+		}
+		newDeck.cards[newCardKey] = oldDeck.cards[i];
+	}
+ 
+	if (errors) {
+		return 0;
+	}
+	return newDeck;
+}
+
+// URLs are limited to 2000 characters
+function generateUrl(deck) {
+	return "http://littlechiba.com/importer.html?deck=" + encodeURIComponent(JSON.stringify(deck));
+}
+
+function exportDeck(deck) {
+	var url = generateUrl(deck);
+	if (!url) { return;	}
+
+	var exportDiv = document.createElement("div"),
+		exportText = document.createElement("div"),
+		exportIFrame = document.createElement("iframe");
+
+	exportText.innerHTML = "Exporting " + deck.name;
+
+	exportIFrame.src = url;
+	exportIFrame.height = "50px";
+	exportIFrame.width = "300px";
+	exportIFrame.sandbox = "allow-scripts allow-same-origin";
+
+	exportDiv.appendChild(exportText);
+	exportDiv.appendChild(exportIFrame);
+	document.body.appendChild(exportDiv);
+}
+
+</script>
+</body>
+</html>

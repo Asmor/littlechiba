@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Little Chiba Importer</title>
+	<style>
+		span {
+			font-weight: bold;
+		}
+		.success {
+			color: green;
+		}
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<script>
+var deck = getQueryJSON("deck");
+
+if (deck) {
+		localStorage["deck:" + deck.name] = JSON.stringify(deck);
+		if (localStorage["deck:" + deck.name] === JSON.stringify(deck)) {
+			document.write("<span class='success'>Imported " + deck.name + "</span>");
+		} else {
+			document.write("<span class='error'>Imported, but unable to save.</span>");
+		}
+} else {
+	document.write("<span class='error'>Unable to import</span>");
+}
+
+function getQueryJSON(s) {
+	var regex = new RegExp(s + "=([^=]*)"),
+		match = document.location.search.match(regex);
+
+	if (!match) {
+		console.log("Unable to find", s);
+		return 0;
+	}
+
+	try {
+		return JSON.parse(decodeURIComponent(match[1]));
+	} catch (ex) {
+		console.log("Value doesn't appear to be JSON", s, match[1]);
+		return 0;
+	}
+}
+</script>
+</body>
+</html>
