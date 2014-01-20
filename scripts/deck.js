@@ -193,7 +193,7 @@ function Deck(isBase) {
 				cardsByType[c.type].qty = 0;
 			}
 			infS = (c.faction === this.identity.faction) ? "" : c.getInfluenceString(false, this.cards[i]);
-			cardsByType[c.type].push({ name: i, qty: this.cards[i], inf: infS });
+			cardsByType[c.type].push({ name: c.name, qty: this.cards[i], inf: infS });
 			cardsByType[c.type].qty += this.cards[i];
 		}
 		
