@@ -88,9 +88,10 @@ function Deck(isBase) {
 		}
 		for (card in cardDiffs) {
 			if (!cardDiffs.hasOwnProperty(card)) { continue; }
+			c = getCardByNameOrId(card);
 			diffQty = cardDiffs[card];
 			diff = {
-				name: card,
+				name: c.name,
 				qty: diffQty
 			}
 			if (diffQty > 0) {
