@@ -38,14 +38,7 @@ function Card(args) {
 		return infString;
 	};
 	this.getData = function () {
-		if (foreignCardData[this.nriKey]) {
-			return foreignCardData[this.nriKey];
-		}
-
-		foreignCardData[this.nriKey] = "Requesting data...";
-
-		Ajax.getCardData(this.nriKey);
-		return foreignCardData[this.nriKey];
+		return foreignCardData[this.nriKey] || "Trouble getting card data";
 	};
 }
 var cards = [];
