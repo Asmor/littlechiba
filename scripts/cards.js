@@ -3509,6 +3509,187 @@ cards.push(new Card({
 	nriKey: "04080"
 }));
 
+cards.push(new Card({
+	name: "Quest Completed",
+	type: event,
+	faction: ana,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "",
+	nriKey: "04081"
+}));
+cards.push(new Card({
+	name: "Hemorrhage",
+	type: program,
+	faction: ana,
+	influence: 4,
+	set: setNames.spin5,
+	attributes: "Virus trash deckDisruption",
+	nriKey: "04082"
+}));
+cards.push(new Card({
+	name: "Tallie Perrault",
+	type: resource,
+	faction: ana,
+	influence: 3,
+	set: setNames.spin5,
+	attributes: "Connection badPublicity tags cards",
+	nriKey: "04083"
+}));
+cards.push(new Card({
+	name: "Executive Wiretaps",
+	type: event,
+	faction: crim,
+	influence: 3,
+	set: setNames.spin5,
+	attributes: "Double handDisruption",
+	nriKey: "04084"
+}));
+cards.push(new Card({
+	name: "Blackguard",
+	type: hardware,
+	faction: crim,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "Console memory expose creditDisruption",
+	nriKey: "04085"
+}));
+cards.push(new Card({
+	name: "CyberSolutions Mem Chip",
+	type: hardware,
+	faction: shap,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "Chip memory",
+	nriKey: "04086"
+}));
+cards.push(new Card({
+	name: "Alpha",
+	type: program,
+	faction: shap,
+	influence: 3,
+	set: setNames.spin5,
+	attributes: "Icebreaker AI",
+	nriKey: "04087"
+}));
+cards.push(new Card({
+	name: "Omega",
+	type: program,
+	faction: shap,
+	influence: 3,
+	set: setNames.spin5,
+	attributes: "Icebreaker AI",
+	nriKey: "04088"
+}));
+cards.push(new Card({
+	name: "Blackmail",
+	type: event,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin5,
+	attributes: "Run badPublicity iceDisruption",
+	nriKey: "04089"
+}));
+cards.push(new Card({
+	name: "Blue Level Clearance",
+	type: operation,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "Double Transaction cards credits",
+	nriKey: "04090"
+}));
+cards.push(new Card({
+	name: "Strongbox",
+	type: upgrade,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "",
+	nriKey: "04091"
+}));
+cards.push(new Card({
+	name: "Toshiyuki Sakai",
+	type: asset,
+	faction: jin,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "Executive advanceable",
+	nriKey: "04092"
+}));
+cards.push(new Card({
+	name: "Yagura",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "CodeGate AP netDamage",
+	nriKey: "04093"
+}));
+cards.push(new Card({
+	name: "Restoring Face",
+	type: operation,
+	faction: jin,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "badPublicity trash",
+	nriKey: "04094"
+}));
+cards.push(new Card({
+	name: "Market Research",
+	type: agenda,
+	faction: nbn,
+	agendaPoints: 2,
+	set: setNames.spin5,
+	attributes: "Research tags",
+	nriKey: "04095"
+}));
+cards.push(new Card({
+	name: "Wraparound",
+	type: ice,
+	faction: nbn,
+	influence: 1,
+	set: setNames.spin5,
+	attributes: "Barrier endRun",
+	nriKey: "04096"
+}));
+cards.push(new Card({
+	name: "GRNDL: Power Unleashed",
+	type: identity,
+	faction: wey,
+	influenceAvailable: 10,
+	set: setNames.spin5,
+	attributes: "Division credits badPublicity",
+	nriKey: "04097"
+}));
+cards.push(new Card({
+	name: "Vulcan Coverup",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 1,
+	set: setNames.spin5,
+	attributes: "Security meatDamage badPublicity",
+	nriKey: "04098"
+}));
+cards.push(new Card({
+	name: "GRNDL Refinery",
+	type: asset,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin5,
+	attributes: "Facility advanceable credits",
+	nriKey: "04099"
+}));
+cards.push(new Card({
+	name: "Subliminal Messaging",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin5,
+	attributes: "GrayOps credits clicks recursion",
+	nriKey: "04100"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
