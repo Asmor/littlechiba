@@ -18,8 +18,6 @@ Ajax.destroy = function () {
 };
 
 // Get all corpo and runner cards in one query and fill foreignCardData global variable.
-// If all works as intended then Ajax.getCardData will never need to fire.
-// 
 // This will be called automaticly in cardControllers constructor
 Ajax.getAllCards = function() {
 	var query = Ajax.baseUrl + "?jsonp=Ajax.massImport",
