@@ -143,10 +143,21 @@ function cardController($scope) {
 		return retVal;
 	};
 	$scope.getMaxDeckHeight = function () {
-		var runnerOffset = (deck.identity && deck.identity.side === runner) ? 20 : 0; // Add 20px for runner because no agenda line
-			offset = ($scope.previewState === 0) ? 175 : 575,
-			height = Math.max(document.documentElement.clientHeight + runnerOffset - offset, 100);
-		return height;
+			var height = document.documentElement.clientHeight - 150;
+
+			if (deck.identity && deck.identity.side === corp) {
+				// Subtract 20 for corp for the agenda line
+				height -= 20;
+			}
+
+			if ($scope.previewType === IMAGES_ONLY || $scope.previewType === IMAGES_AND_TEXT) {
+				height -= 418;
+			} else if ($scope.previewType === TEXT_ONLY) {
+				height -= 300;
+			}
+
+
+		return Math.max(height, 100);
 	};
 	$scope.getTableFilterClass = function (side) {
 		var i, filters = [];
