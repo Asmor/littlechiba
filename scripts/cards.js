@@ -3509,6 +3509,8 @@ cards.push(new Card({
 	nriKey: "04080"
 }));
 
+// Spin 5 - Fear and Loathing
+
 cards.push(new Card({
 	name: "Quest Completed",
 	type: event,
@@ -3688,6 +3690,189 @@ cards.push(new Card({
 	set: setNames.spin5,
 	attributes: "GrayOps credits clicks recursion",
 	nriKey: "04100"
+}));
+
+// Spin 6 - Double Time
+cards.push(new Card({
+	name: "Singularity",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Double Run trash",
+	nriKey: "04101"
+}));
+cards.push(new Card({
+	name: "Queen's Gambit",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Double advancementCounters credits",
+	nriKey: "04102"
+}));
+cards.push(new Card({
+	name: "Dyson Fractal Generator",
+	type: hardware,
+	faction: ana,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Chip Stealth recurringCredits",
+	nriKey: "04103"
+}));
+cards.push(new Card({
+	name: "Silencer",
+	type: hardware,
+	faction: crim,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Chip Stealth recurringCredits",
+	nriKey: "04104"
+}));
+cards.push(new Card({
+	name: "Savoir-faire",
+	type: program,
+	faction: crim,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "",
+	nriKey: "04105"
+}));
+cards.push(new Card({
+	name: "Fall Guy",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.spin6,
+	attributes: "Connection trashProtection credits",
+	nriKey: "04106"
+}));
+cards.push(new Card({
+	name: "Power Nap",
+	type: event,
+	faction: shap,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "Double credits",
+	nriKey: "04107"
+}));
+cards.push(new Card({
+	name: "Paintbrush",
+	type: program,
+	faction: shap,
+	influence: 4,
+	set: setNames.spin6,
+	attributes: "",
+	nriKey: "04108"
+}));
+cards.push(new Card({
+	name: "Lucky Find",
+	type: event,
+	faction: neut,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "Double credits",
+	nriKey: "04109"
+}));
+cards.push(new Card({
+	name: "Gyri Labyrinth",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "CodeGate handDisruption",
+	nriKey: "04110"
+}));
+cards.push(new Card({
+	name: "Reclamation Order",
+	type: operation,
+	faction: hb,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "Double recursion",
+	nriKey: "04111"
+}));
+cards.push(new Card({
+	name: "Broadcast Square",
+	type: asset,
+	faction: nbn,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Facility badPublicity trace",
+	nriKey: "04112"
+}));
+cards.push(new Card({
+	name: "Corporate Shuffle",
+	type: operation,
+	faction: nbn,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "Double cards",
+	nriKey: "04113"
+}));
+cards.push(new Card({
+	name: "Caprice Nisei",
+	type: upgrade,
+	faction: jin,
+	influence: 4,
+	set: setNames.spin6,
+	attributes: "Clone Psi endRun",
+	nriKey: "04114"
+}));
+cards.push(new Card({
+	name: "Shinobi",
+	type: ice,
+	faction: jin,
+	influence: 3,
+	set: setNames.spin6,
+	attributes: "Sentry Tracer AP Illicit badPublicity trace netDamage endRun",
+	nriKey: "04115"
+}));
+cards.push(new Card({
+	name: "Marker",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.spin6,
+	attributes: "CodeGate",
+	nriKey: "04116"
+}));
+cards.push(new Card({
+	name: "Hive",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.spin6,
+	attributes: "Barrier endRun",
+	nriKey: "04117"
+}));
+cards.push(new Card({
+	name: "Witness Tampering",
+	type: operation,
+	faction: wey,
+	influence: 1,
+	set: setNames.spin6,
+	attributes: "Double badPublicity",
+	nriKey: "04118"
+}));
+cards.push(new Card({
+	name: "NAPD Contract",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 2,
+	influence: 0,
+	set: setNames.spin6,
+	attributes: "Security badPublicity",
+	nriKey: "04119"
+}));
+cards.push(new Card({
+	name: "Quandary",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.spin6,
+	attributes: "CodeGate endRun",
+	nriKey: "04120"
 }));
 
 cards = cards.sort(function (a, b) {

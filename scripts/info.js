@@ -57,8 +57,8 @@ var corp = "Corporation",
 			spin2: setNames.spin2,
 			spin3: setNames.spin3,
 			spin4: setNames.spin4,
-			spin5: setNames.spin5/*,
-			spin6: setNames.spin6*/
+			spin5: setNames.spin5,
+			spin6: setNames.spin6
 		}
 	}
 
