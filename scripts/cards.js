@@ -3875,6 +3875,332 @@ cards.push(new Card({
 	nriKey: "04120"
 }));
 
+// Honor and Profit
+
+cards.push(new Card({
+	name: "Harmony Medtech: Biomedical Pioneer",
+	type: identity,
+	faction: jin,
+	influenceAvailable: 12,
+	minCards: 40,
+	set: setNames.hp,
+	attributes: "Division",
+	nriKey: "05001"
+}));
+cards.push(new Card({
+	name: "Nisei Division: The Next Generation",
+	type: identity,
+	faction: jin,
+	set: setNames.hp,
+	attributes: "Division credits",
+	nriKey: "05002"
+}));
+cards.push(new Card({
+	name: "Tennin Institute: The Secrets Within",
+	type: identity,
+	faction: jin,
+	set: setNames.hp,
+	attributes: "Division advancementCounters",
+	nriKey: "05003"
+}));
+cards.push(new Card({
+	name: "House of Knives",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 1,
+	set: setNames.hp,
+	attributes: "Security netDamage",
+	nriKey: "05004"
+}));
+cards.push(new Card({
+	name: "Medical Breakthrough",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 2,
+	set: setNames.hp,
+	attributes: "Research",
+	nriKey: "05005"
+}));
+cards.push(new Card({
+	name: "Philotic Entanglement",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 2,
+	set: setNames.hp,
+	attributes: "Security netDamage",
+	nriKey: "05006"
+}));
+cards.push(new Card({
+	name: "The Future Perfect",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 3,
+	set: setNames.hp,
+	attributes: "Initiative Psi",
+	nriKey: "05007"
+}));
+cards.push(new Card({
+	name: "Chairman Hiro",
+	type: asset,
+	faction: jin,
+	influence: 5,
+	set: setNames.hp,
+	attributes: "Executive handDisruption",
+	nriKey: "05008"
+}));
+cards.push(new Card({
+	name: "Psychic Field",
+	type: asset,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Ambush Psi netDamage",
+	nriKey: "05010"
+}));
+cards.push(new Card({
+	name: "Cerebral Cast",
+	type: operation,
+	faction: jin,
+	influence: 3,
+	set: setNames.hp,
+	attributes: "GrayOps Psi brainDamage tags",
+	nriKey: "05013"
+}));
+cards.push(new Card({
+	name: "Medical Research Fundraiser",
+	type: operation,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Transaction credits",
+	nriKey: "05014"
+}));
+cards.push(new Card({
+	name: "Mushin No Shin",
+	type: operation,
+	faction: jin,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Double advancementCounters",
+	nriKey: "05015"
+}));
+cards.push(new Card({
+	name: "Inazuma",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "CodeGate",
+	nriKey: "05016"
+}));
+cards.push(new Card({
+	name: "Komainu",
+	type: ice,
+	faction: jin,
+	influence: 5,
+	set: setNames.hp,
+	attributes: "Sentry AP netDamage",
+	nriKey: "05017"
+}));
+cards.push(new Card({
+	name: "Plan B",
+	type: asset,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Ambush advanceable",
+	nriKey: "05023"
+}));
+cards.push(new Card({
+	name: "Guard",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Sentry endRun",
+	nriKey: "05024"
+}));
+cards.push(new Card({
+	name: "Rainbow",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Sentry CodeGate Barrier endRun",
+	nriKey: "05025"
+}));
+cards.push(new Card({
+	name: "Diversified Portfolio",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Transaction credits",
+	nriKey: "05026"
+}));
+cards.push(new Card({
+	name: "Fast Track",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "search",
+	nriKey: "05027"
+}));
+cards.push(new Card({
+	name: "Iain Stirling",
+	type: identity,
+	faction: crim,
+	influenceAvailable: 10,
+	set: setNames.hp,
+	attributes: "Natural credits",
+	nriKey: "05028"
+}));
+cards.push(new Card({
+	name: "Ken \"Express\" Tenma",
+	type: identity,
+	faction: crim,
+	influenceAvailable: 17,
+	set: setNames.hp,
+	attributes: "Clone credits",
+	nriKey: "05029"
+}));
+cards.push(new Card({
+	name: "Silhouette",
+	type: identity,
+	faction: crim,
+	minCards: 40,
+	set: setNames.hp,
+	attributes: "Natural expose",
+	nriKey: "05030"
+}));
+cards.push(new Card({
+	name: "Calling in Favors",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "credits",
+	nriKey: "05031"
+}));
+cards.push(new Card({
+	name: "Early Bird",
+	type: operation,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Priority Run clicks",
+	nriKey: "05032"
+}));
+cards.push(new Card({
+	name: "Legwork",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Run",
+	nriKey: "05035"
+}));
+cards.push(new Card({
+	name: "Logos",
+	type: hardware,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Console memory handSize search",
+	nriKey: "05037"
+}));
+cards.push(new Card({
+	name: "Alias",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Icebreaker Killer",
+	nriKey: "05041"
+}));
+cards.push(new Card({
+	name: "Breach",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Icebreaker Fracter",
+	nriKey: "05042"
+}));
+cards.push(new Card({
+	name: "Grappling Hook",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "",
+	nriKey: "05045"
+}));
+cards.push(new Card({
+	name: "Passport",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Icebreaker Decoder",
+	nriKey: "05046"
+}));
+cards.push(new Card({
+	name: "Theophilius Bagbiter",
+	type: resource,
+	faction: crim,
+	influence: 4,
+	set: setNames.hp,
+	attributes: "Connection handSize",
+	nriKey: "05049"
+}));
+cards.push(new Card({
+	name: "Tri-maf Contact",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Connection credits meatDamage",
+	nriKey: "05050"
+}));
+cards.push(new Card({
+	name: "Q-Coherence Chip",
+	type: hardware,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Chip memory",
+	nriKey: "05052"
+}));
+cards.push(new Card({
+	name: "Overmind",
+	type: program,
+	faction: neut,
+	influence: 0,
+	set: setNames.hp,
+	attributes: "Icebreaker AI",
+	nriKey: "05053"
+}));
+cards.push(new Card({
+	name: "Oracle May",
+	type: resource,
+	faction: neut,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Connection cards credits",
+	nriKey: "05054"
+}));
+cards.push(new Card({
+	name: "Donut Taganes",
+	type: resource,
+	faction: neut,
+	influence: 2,
+	set: setNames.hp,
+	attributes: "Connection creditDisruption",
+	nriKey: "05055"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });

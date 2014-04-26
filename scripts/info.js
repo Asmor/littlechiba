@@ -35,7 +35,8 @@ var corp = "Corporation",
 		spin3: "Mala Tempora",
 		spin4: "True Colors",
 		spin5: "Fear and Loathing",
-		spin6: "Double Time"
+		spin6: "Double Time",
+		hp: "Honor & Profit"
 	}, // For backwards compatibility
 	sets = {
 		"Core": {
@@ -50,7 +51,8 @@ var corp = "Corporation",
 			gen6: setNames.gen6
 		},
 		"Big Boxes": {
-			cnc: setNames.cnc
+			cnc: setNames.cnc,
+			hp: setNames.hp
 		},
 		"Spin Cycle": {
 			spin1: setNames.spin1,
