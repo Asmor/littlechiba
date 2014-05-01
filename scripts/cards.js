@@ -3927,7 +3927,7 @@ cards.push(new Card({
 	faction: jin,
 	agendaPoints: 2,
 	set: setNames.hp,
-	attributes: "Security netDamage",
+	attributes: "Security netDamage unique",
 	nriKey: "05006"
 }));
 cards.push(new Card({
@@ -3945,8 +3945,17 @@ cards.push(new Card({
 	faction: jin,
 	influence: 5,
 	set: setNames.hp,
-	attributes: "Executive handDisruption",
+	attributes: "Executive handDisruption unique",
 	nriKey: "05008"
+}));
+cards.push(new Card({
+	name: "Mental Health Clinic",
+	type: asset,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Facility credits handSize",
+	nriKey: "05009"
 }));
 cards.push(new Card({
 	name: "Psychic Field",
@@ -3956,6 +3965,24 @@ cards.push(new Card({
 	set: setNames.hp,
 	attributes: "Ambush Psi netDamage",
 	nriKey: "05010"
+}));
+cards.push(new Card({
+	name: "Shi.Kyū",
+	type: asset,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Ambush netDamage agendaPoints",
+	nriKey: "05011"
+}));
+cards.push(new Card({
+	name: "Tenma Line",
+	type: asset,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Clone",
+	nriKey: "05012"
 }));
 cards.push(new Card({
 	name: "Cerebral Cast",
@@ -4001,6 +4028,51 @@ cards.push(new Card({
 	set: setNames.hp,
 	attributes: "Sentry AP netDamage",
 	nriKey: "05017"
+}));
+cards.push(new Card({
+	name: "Pup",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Sentry AP netDamage",
+	nriKey: "05018"
+}));
+cards.push(new Card({
+	name: "Shiro",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "CodeGate search",
+	nriKey: "05019"
+}));
+cards.push(new Card({
+	name: "Susanoo-No-Mikoto",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Sentry Deflector unique",
+	nriKey: "05020"
+}));
+cards.push(new Card({
+	name: "NeoTokyoCityGrid",
+	type: upgrade,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Region credits",
+	nriKey: "05021"
+}));
+cards.push(new Card({
+	name: "Tori Hanzō",
+	type: upgrade,
+	faction: jin,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Sysop unique netDamage brainDamage",
+	nriKey: "05022"
 }));
 cards.push(new Card({
 	name: "Plan B",
@@ -4085,12 +4157,30 @@ cards.push(new Card({
 }));
 cards.push(new Card({
 	name: "Early Bird",
-	type: operation,
+	type: event,
 	faction: crim,
 	influence: 2,
 	set: setNames.hp,
 	attributes: "Priority Run clicks",
 	nriKey: "05032"
+}));
+cards.push(new Card({
+	name: "Express Delivery",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "search",
+	nriKey: "05033"
+}));
+cards.push(new Card({
+	name: "Feint",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Run",
+	nriKey: "05034"
 }));
 cards.push(new Card({
 	name: "Legwork",
@@ -4102,13 +4192,49 @@ cards.push(new Card({
 	nriKey: "05035"
 }));
 cards.push(new Card({
+	name: "Planned Assault",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Double search",
+	nriKey: "05036"
+}));
+cards.push(new Card({
 	name: "Logos",
 	type: hardware,
 	faction: crim,
 	influence: 2,
 	set: setNames.hp,
-	attributes: "Console memory handSize search",
+	attributes: "Console memory handSize search unique",
 	nriKey: "05037"
+}));
+cards.push(new Card({
+	name: "Public Terminal",
+	type: hardware,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "recurringCredits",
+	nriKey: "05038"
+}));
+cards.push(new Card({
+	name: "Unregistered S&W '35",
+	type: hardware,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Weapon trash iceDisruption",
+	nriKey: "05039"
+}));
+cards.push(new Card({
+	name: "Window",
+	type: hardware,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "cards",
+	nriKey: "05040"
 }));
 cards.push(new Card({
 	name: "Alias",
@@ -4129,6 +4255,24 @@ cards.push(new Card({
 	nriKey: "05042"
 }));
 cards.push(new Card({
+	name: "Bug",
+	type: program,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "expose",
+	nriKey: "05043"
+}));
+cards.push(new Card({
+	name: "Gingerbread",
+	type: program,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Icebreaker",
+	nriKey: "05044"
+}));
+cards.push(new Card({
 	name: "Grappling Hook",
 	type: program,
 	faction: crim,
@@ -4147,12 +4291,30 @@ cards.push(new Card({
 	nriKey: "05046"
 }));
 cards.push(new Card({
+	name: "Push Your Luck",
+	type: event,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "credits",
+	nriKey: "05047"
+}));
+cards.push(new Card({
+	name: "Security Testing",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "Job credits",
+	nriKey: "05048"
+}));
+cards.push(new Card({
 	name: "Theophilius Bagbiter",
 	type: resource,
 	faction: crim,
 	influence: 4,
 	set: setNames.hp,
-	attributes: "Connection handSize",
+	attributes: "Connection handSize unique",
 	nriKey: "05049"
 }));
 cards.push(new Card({
@@ -4163,6 +4325,15 @@ cards.push(new Card({
 	set: setNames.hp,
 	attributes: "Connection credits meatDamage",
 	nriKey: "05050"
+}));
+cards.push(new Card({
+	name: "Mass Install",
+	type: event,
+	faction: neut,
+	influence: 1,
+	set: setNames.hp,
+	attributes: "",
+	nriKey: "05051"
 }));
 cards.push(new Card({
 	name: "Q-Coherence Chip",
@@ -4197,7 +4368,7 @@ cards.push(new Card({
 	faction: neut,
 	influence: 2,
 	set: setNames.hp,
-	attributes: "Connection creditDisruption",
+	attributes: "Connection creditDisruption unique",
 	nriKey: "05055"
 }));
 
