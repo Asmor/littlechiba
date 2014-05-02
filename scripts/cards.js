@@ -4195,7 +4195,7 @@ cards.push(new Card({
 	name: "Planned Assault",
 	type: event,
 	faction: crim,
-	influence: 1,
+	influence: 4,
 	set: setNames.hp,
 	attributes: "Double search",
 	nriKey: "05036"
