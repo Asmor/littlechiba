@@ -4024,7 +4024,7 @@ cards.push(new Card({
 	name: "Komainu",
 	type: ice,
 	faction: jin,
-	influence: 5,
+	influence: 4,
 	set: setNames.hp,
 	attributes: "Sentry AP netDamage",
 	nriKey: "05017"
