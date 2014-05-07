@@ -3048,7 +3048,7 @@ cards.push(new Card({
 	faction: hb,
 	influence: 5,
 	set: setNames.spin2,
-	attributes: "Barrier Bioroid endRun trash brainDamage creditDisruption",
+	attributes: "Barrier Bioroid endRun trash brainDamage creditDisruption unique",
 	nriKey: "04030"
 }));
 cards.push(new Card({
@@ -3952,7 +3952,7 @@ cards.push(new Card({
 	name: "Mental Health Clinic",
 	type: asset,
 	faction: jin,
-	influence: 1,
+	influence: 2,
 	set: setNames.hp,
 	attributes: "Facility credits handSize",
 	nriKey: "05009"
@@ -3970,7 +3970,7 @@ cards.push(new Card({
 	name: "Shi.Kyū",
 	type: asset,
 	faction: jin,
-	influence: 1,
+	influence: 4,
 	set: setNames.hp,
 	attributes: "Ambush netDamage agendaPoints",
 	nriKey: "05011"
@@ -3979,7 +3979,7 @@ cards.push(new Card({
 	name: "Tenma Line",
 	type: asset,
 	faction: jin,
-	influence: 1,
+	influence: 3,
 	set: setNames.hp,
 	attributes: "Clone",
 	nriKey: "05012"
@@ -4042,7 +4042,7 @@ cards.push(new Card({
 	name: "Shiro",
 	type: ice,
 	faction: jin,
-	influence: 1,
+	influence: 4,
 	set: setNames.hp,
 	attributes: "CodeGate search",
 	nriKey: "05019"
@@ -4051,16 +4051,17 @@ cards.push(new Card({
 	name: "Susanoo-No-Mikoto",
 	type: ice,
 	faction: jin,
-	influence: 1,
+	influence: 3,
 	set: setNames.hp,
 	attributes: "Sentry Deflector unique",
 	nriKey: "05020"
 }));
 cards.push(new Card({
+	name: "NeoTokyo Grid",
 	name: "NeoTokyoCityGrid",
 	type: upgrade,
 	faction: jin,
-	influence: 1,
+	influence: 2,
 	set: setNames.hp,
 	attributes: "Region credits",
 	nriKey: "05021"
@@ -4069,7 +4070,7 @@ cards.push(new Card({
 	name: "Tori Hanzō",
 	type: upgrade,
 	faction: jin,
-	influence: 1,
+	influence: 4,
 	set: setNames.hp,
 	attributes: "Sysop unique netDamage brainDamage",
 	nriKey: "05022"
@@ -4177,7 +4178,7 @@ cards.push(new Card({
 	name: "Feint",
 	type: event,
 	faction: crim,
-	influence: 1,
+	influence: 3,
 	set: setNames.hp,
 	attributes: "Run",
 	nriKey: "05034"
@@ -4195,7 +4196,7 @@ cards.push(new Card({
 	name: "Planned Assault",
 	type: event,
 	faction: crim,
-	influence: 4,
+	influence: 2,
 	set: setNames.hp,
 	attributes: "Double search",
 	nriKey: "05036"
@@ -4213,7 +4214,7 @@ cards.push(new Card({
 	name: "Public Terminal",
 	type: hardware,
 	faction: crim,
-	influence: 1,
+	influence: 2,
 	set: setNames.hp,
 	attributes: "recurringCredits",
 	nriKey: "05038"
@@ -4222,7 +4223,7 @@ cards.push(new Card({
 	name: "Unregistered S&W '35",
 	type: hardware,
 	faction: crim,
-	influence: 1,
+	influence: 3,
 	set: setNames.hp,
 	attributes: "Weapon trash iceDisruption",
 	nriKey: "05039"
@@ -4267,7 +4268,7 @@ cards.push(new Card({
 	name: "Gingerbread",
 	type: program,
 	faction: crim,
-	influence: 1,
+	influence: 2,
 	set: setNames.hp,
 	attributes: "Icebreaker",
 	nriKey: "05044"
@@ -4303,7 +4304,7 @@ cards.push(new Card({
 	name: "Security Testing",
 	type: resource,
 	faction: crim,
-	influence: 1,
+	influence: 3,
 	set: setNames.hp,
 	attributes: "Job credits",
 	nriKey: "05048"
