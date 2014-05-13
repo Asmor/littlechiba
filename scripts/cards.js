@@ -4331,7 +4331,7 @@ cards.push(new Card({
 	name: "Mass Install",
 	type: event,
 	faction: neut,
-	influence: 1,
+	influence: 0,
 	set: setNames.hp,
 	attributes: "",
 	nriKey: "05051"
