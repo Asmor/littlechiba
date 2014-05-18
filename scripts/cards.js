@@ -3360,7 +3360,7 @@ cards.push(new Card({
 	faction: crim,
 	influence: 2,
 	set: setNames.spin4,
-	attributes: "netDamage meatDamage brainDamage",
+	attributes: "netDamage meatDamage brainDamage badPublicity",
 	nriKey: "04064"
 }));
 cards.push(new Card({
