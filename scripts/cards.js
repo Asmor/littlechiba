@@ -2874,7 +2874,7 @@ cards.push(new Card({
 	faction: hb,
 	influence: 2,
 	set: setNames.spin1,
-	attributes: "Code Gate NEXT endRun",
+	attributes: "CodeGate NEXT endRun",
 	nriKey: "04011"
 }));
 cards.push(new Card({
