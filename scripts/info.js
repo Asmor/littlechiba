@@ -36,7 +36,8 @@ var corp = "Corporation",
 		spin4: "True Colors",
 		spin5: "Fear and Loathing",
 		spin6: "Double Time",
-		hp: "Honor & Profit"
+		hp: "Honor & Profit",
+		lunar1: "Upstalk",
 	}, // For backwards compatibility
 	sets = {
 		"Core": {
@@ -61,7 +62,10 @@ var corp = "Corporation",
 			spin4: setNames.spin4,
 			spin5: setNames.spin5,
 			spin6: setNames.spin6
-		}
+		},
+		"Lunar Cycle": {
+			lunar1: setNames.lunar1,
+		},
 	}
 
 sides[corp] = { name: "Corp", cardTypes: {}, factions: {} };

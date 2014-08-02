@@ -4373,6 +4373,188 @@ cards.push(new Card({
 	nriKey: "05055"
 }));
 
+// Lunar 1 - Upstalk
+
+cards.push(new Card({
+	name: "Domestic Sleepers",
+	type: agenda,
+	faction: hb,
+	agendaPoints: 0,
+	set: setNames.lunar1,
+	attributes: "",
+	nriKey: "06001"
+}));
+cards.push(new Card({
+	name: "NEXT Silver",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Barrier NEXT endRun",
+	nriKey: "06002"
+}));
+cards.push(new Card({
+	name: "Lotus Field",
+	type: ice,
+	faction: jin,
+	influence: 1,
+	set: setNames.lunar1,
+	attributes: "CodeGate endRun",
+	nriKey: "06003"
+}));
+cards.push(new Card({
+	name: "Mutate",
+	type: operation,
+	faction: jin,
+	influence: 3,
+	set: setNames.lunar1,
+	attributes: "",
+	nriKey: "06004"
+}));
+cards.push(new Card({
+	name: "Near-Earth Hub: Broadcast Center",
+	type: identity,
+	faction: nbn,
+	influenceAvailable: 17,
+	set: setNames.lunar1,
+	attributes: "Division cards",
+	nriKey: "06005"
+}));
+cards.push(new Card({
+	name: "Primary Transmission Dish",
+	type: asset,
+	faction: nbn,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Beanstalk recurringCredits trace",
+	nriKey: "06006"
+}));
+cards.push(new Card({
+	name: "Midway Station Grid",
+	type: upgrade,
+	faction: nbn,
+	influence: 4,
+	set: setNames.lunar1,
+	attributes: "Beanstalk Region creditDisruption",
+	nriKey: "06007"
+}));
+cards.push(new Card({
+	name: "The Root",
+	type: asset,
+	faction: wey,
+	influence: 3,
+	set: setNames.lunar1,
+	attributes: "Beanstalk recurringCredits",
+	nriKey: "06008"
+}));
+cards.push(new Card({
+	name: "Taurus",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Sentry Tracer trace trash",
+	nriKey: "06009"
+}));
+cards.push(new Card({
+	name: "Mother Goddess",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar1,
+	attributes: "Mythic endRun",
+	nriKey: "06010"
+}));
+cards.push(new Card({
+	name: "Galahad",
+	type: ice,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar1,
+	attributes: "Barrier Grail endRun",
+	nriKey: "06011"
+}));
+cards.push(new Card({
+	name: "Bad Times",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar1,
+	attributes: "GrayOps tags",
+	nriKey: "06012"
+}));
+cards.push(new Card({
+	name: "Cyber Threat",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.lunar1,
+	attributes: "Priority",
+	nriKey: "06013"
+}));
+cards.push(new Card({
+	name: "Lamprey",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Virus creditDisruption",
+	nriKey: "06014"
+}));
+cards.push(new Card({
+	name: "Paper Tripping",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Priority tags",
+	nriKey: "06015"
+}));
+cards.push(new Card({
+	name: "Power Tap",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.lunar1,
+	attributes: "trace credits",
+	nriKey: "06016"
+}));
+cards.push(new Card({
+	name: "Nasir Meidan: Cyber Explorer",
+	type: identity,
+	faction: shap,
+	set: setNames.lunar1,
+	attributes: "credits",
+	nriKey: "06017"
+}));
+cards.push(new Card({
+	name: "Social Engineering",
+	type: event,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Priority credits",
+	nriKey: "06018"
+}));
+cards.push(new Card({
+	name: "Leprechaun",
+	type: program,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar1,
+	attributes: "Daemon",
+	nriKey: "06019"
+}));
+cards.push(new Card({
+	name: "Eden Shard",
+	type: resource,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar1,
+	attributes: "Virtual Source",
+	nriKey: "06020"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
