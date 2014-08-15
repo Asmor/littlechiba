@@ -38,6 +38,12 @@ var corp = "Corporation",
 		spin6: "Double Time",
 		hp: "Honor & Profit",
 		lunar1: "Upstalk",
+		lunar2: "The Spaces Between",
+		lunar3: "First Contact",
+		lunar4: "Up and Over",
+		lunar5: "All That Remains",
+		lunar6: "The Source",
+		oc: "Order & Chaos",
 	}, // For backwards compatibility
 	sets = {
 		"Core": {
@@ -53,7 +59,8 @@ var corp = "Corporation",
 		},
 		"Big Boxes": {
 			cnc: setNames.cnc,
-			hp: setNames.hp
+			hp: setNames.hp,
+			// oc: setNames.oc,
 		},
 		"Spin Cycle": {
 			spin1: setNames.spin1,
@@ -65,6 +72,11 @@ var corp = "Corporation",
 		},
 		"Lunar Cycle": {
 			lunar1: setNames.lunar1,
+			lunar2: setNames.lunar2,
+			// lunar3: setNames.lunar3,
+			// lunar4: setNames.lunar4,
+			// lunar5: setNames.lunar5,
+			// lunar6: setNames.lunar6,
 		},
 	}
 

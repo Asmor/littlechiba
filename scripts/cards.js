@@ -4555,6 +4555,188 @@ cards.push(new Card({
 	nriKey: "06020"
 }));
 
+// Lunar 2 - The Spaces Between
+
+cards.push(new Card({
+	name: "The Foundry",
+	type: identity,
+	faction: hb,
+	set: setNames.lunar2,
+	attributes: "Division search",
+	nriKey: "06021"
+}));
+cards.push(new Card({
+	name: "Enhanced Login Protocol",
+	type: operation,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Current clickDisruption",
+	nriKey: "06022"
+}));
+cards.push(new Card({
+	name: "Heinlein Grid",
+	type: upgrade,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Region creditDisruption",
+	nriKey: "06023"
+}));
+cards.push(new Card({
+	name: "Encrypted Portals",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 1,
+	set: setNames.lunar2,
+	attributes: "Security credits",
+	nriKey: "06024"
+}));
+cards.push(new Card({
+	name: "Cerebral Static",
+	type: operation,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Current",
+	nriKey: "06025"
+}));
+cards.push(new Card({
+	name: "Targeted Marketing",
+	type: operation,
+	faction: nbn,
+	influence: 1,
+	set: setNames.lunar2,
+	attributes: "Current credits",
+	nriKey: "06026"
+}));
+cards.push(new Card({
+	name: "Information Overload",
+	type: ice,
+	faction: nbn,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Sentry Tracer tags trash",
+	nriKey: "06027"
+}));
+cards.push(new Card({
+	name: "Paywall Implementation",
+	type: operation,
+	faction: wey,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Current Transaction credits",
+	nriKey: "06028"
+}));
+cards.push(new Card({
+	name: "Sealed Vault",
+	type: asset,
+	faction: wey,
+	influence: 1,
+	set: setNames.lunar2,
+	attributes: "Facility credits",
+	nriKey: "06029"
+}));
+cards.push(new Card({
+	name: "Eden Fragment",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 3,
+	set: setNames.lunar2,
+	attributes: "Source iceBoosting",
+	nriKey: "06030"
+}));
+cards.push(new Card({
+	name: "Lag Time",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar2,
+	attributes: "Current iceBoosting",
+	nriKey: "06031"
+}));
+cards.push(new Card({
+	name: "Will-o'-the-Wisp",
+	type: upgrade,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar2,
+	attributes: "",
+	nriKey: "06032"
+}));
+cards.push(new Card({
+	name: "D4v1d",
+	type: program,
+	faction: ana,
+	influence: 4,
+	set: setNames.lunar2,
+	attributes: "",
+	nriKey: "06033"
+}));
+cards.push(new Card({
+	name: "Scrubbed",
+	type: event,
+	faction: ana,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Current iceDisruption",
+	nriKey: "06034"
+}));
+cards.push(new Card({
+	name: "Three Steps Ahead",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Priority credits",
+	nriKey: "06035"
+}));
+cards.push(new Card({
+	name: "Unscheduled Maintenance",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar2,
+	attributes: "Current iceDisruption",
+	nriKey: "06036"
+}));
+cards.push(new Card({
+	name: "Cache",
+	type: program,
+	faction: crim,
+	influence: 1,
+	set: setNames.lunar2,
+	attributes: "Virus credits",
+	nriKey: "06037"
+}));
+cards.push(new Card({
+	name: "Net Celebrity",
+	type: event,
+	faction: shap,
+	influence: 1,
+	set: setNames.lunar2,
+	attributes: "Current recurringCredits",
+	nriKey: "06038"
+}));
+cards.push(new Card({
+	name: "LLDS Energy Regulator",
+	type: program,
+	faction: shap,
+	influence: 1,
+	set: setNames.lunar2,
+	attributes: "trashProtection",
+	nriKey: "06039"
+}));
+cards.push(new Card({
+	name: "Ghost Runner",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar2,
+	attributes: "Stealth credits",
+	nriKey: "06040"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
