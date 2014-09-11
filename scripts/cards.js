@@ -4737,6 +4737,187 @@ cards.push(new Card({
 	nriKey: "06040"
 }));
 
+// Lunar 3 - First Concact
+cards.push(new Card({
+	name: "IQ",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "CodeGate endRun",
+	nriKey: "06041"
+}));
+cards.push(new Card({
+	name: "Eliza's Toybox",
+	type: asset,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "Ritzy unique",
+	nriKey: "06042"
+}));
+cards.push(new Card({
+	name: "Kitsune",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "Mythic Trap",
+	nriKey: "06043"
+}));
+cards.push(new Card({
+	name: "Port Anson Grid",
+	type: upgrade,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "Region",
+	nriKey: "06044"
+}));
+cards.push(new Card({
+	name: "The News Now Hour",
+	type: asset,
+	faction: nbn,
+	influence: 3,
+	set: setNames.lunar3,
+	attributes: "Cast",
+	nriKey: "06045"
+}));
+cards.push(new Card({
+	name: "Manhunt",
+	type: operation,
+	faction: nbn,
+	influence: 3,
+	set: setNames.lunar3,
+	attributes: "Current trace tags",
+	nriKey: "06046"
+}));
+cards.push(new Card({
+	name: "Wendigo",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "CodeGate Morph advanceable Barrier",
+	nriKey: "06047"
+}));
+cards.push(new Card({
+	name: "Crisium Grid",
+	type: upgrade,
+	faction: wey,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "Region",
+	nriKey: "06048"
+}));
+cards.push(new Card({
+	name: "Chronos Project",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 1,
+	set: setNames.lunar3,
+	attributes: "Research",
+	nriKey: "06049"
+}));
+cards.push(new Card({
+	name: "Shattered Remains",
+	type: asset,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar3,
+	attributes: "Ambush advanceable trash",
+	nriKey: "06050"
+}));
+cards.push(new Card({
+	name: "Lancelot",
+	type: ice,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "Sentry Grail trash",
+	nriKey: "06051"
+}));
+cards.push(new Card({
+	name: "Quetzal: Free Spirit",
+	type: identity,
+	faction: ana,
+	set: setNames.lunar3,
+	attributes: "G-mod",
+	nriKey: "06052"
+}));
+cards.push(new Card({
+	name: "BlacKat",
+	type: program,
+	faction: ana,
+	influence: 3,
+	set: setNames.lunar3,
+	attributes: "Icebreaker Fracter stealthBonus",
+	nriKey: "06053"
+}));
+cards.push(new Card({
+	name: "Duggar's",
+	type: resource,
+	faction: ana,
+	influence: 4,
+	set: setNames.lunar3,
+	attributes: "Location Seedy cards unique",
+	nriKey: "06054"
+}));
+cards.push(new Card({
+	name: "BOX-E",
+	type: hardware,
+	faction: crim,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "Console memory handSize unique",
+	nriKey: "06055"
+}));
+cards.push(new Card({
+	name: "The Supplier",
+	type: resource,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "Connection unique costReduction",
+	nriKey: "06056"
+}));
+cards.push(new Card({
+	name: "Refractor",
+	type: program,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar3,
+	attributes: "Icebreaker Decoder stealthBonus",
+	nriKey: "06057"
+}));
+cards.push(new Card({
+	name: "Order of Sol",
+	type: resource,
+	faction: shap,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "unique Location credits",
+	nriKey: "06058"
+}));
+cards.push(new Card({
+	name: "Hades Shard",
+	type: resource,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "Virtual Source unique",
+	nriKey: "06059"
+}));
+cards.push(new Card({
+	name: "Rachel Beckman",
+	type: resource,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar3,
+	attributes: "unique Connection clicks tags",
+	nriKey: "06060"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
