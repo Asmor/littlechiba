@@ -4918,6 +4918,189 @@ cards.push(new Card({
 	nriKey: "06060"
 }));
 
+// Lunar 4 - Up and Over
+
+cards.push(new Card({
+	name: "Architect",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "Sentry recursion",
+	nriKey: "06061"
+}));
+cards.push(new Card({
+	name: "Peak Efficiency",
+	type: operation,
+	faction: hb,
+	influence: 1,
+	set: setNames.lunar4,
+	attributes: "credits",
+	nriKey: "06062"
+}));
+cards.push(new Card({
+	name: "Labyrinthine Servers",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 3,
+	set: setNames.lunar4,
+	attributes: "Security",
+	nriKey: "06063"
+}));
+cards.push(new Card({
+	name: "Ashigaru",
+	type: ice,
+	faction: jin,
+	influence: 3,
+	set: setNames.lunar4,
+	attributes: "Barrier endRun",
+	nriKey: "06064"
+}));
+cards.push(new Card({
+	name: "Mamba",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "Sentry Psi AP netDamage",
+	nriKey: "06065"
+}));
+cards.push(new Card({
+	name: "Reversed Accounts",
+	type: asset,
+	faction: nbn,
+	influence: 1,
+	set: setNames.lunar4,
+	attributes: "Hostile advanceable creditDisruption",
+	nriKey: "06066"
+}));
+cards.push(new Card({
+	name: "Universal Connectivity Fee",
+	type: ice,
+	faction: nbn,
+	influence: 1,
+	set: setNames.lunar4,
+	attributes: "Trap tags creditDisruption",
+	nriKey: "06067"
+}));
+cards.push(new Card({
+	name: "Blue Sun: Powering the Future",
+	type: identity,
+	faction: wey,
+	influenceAvailable: 15,
+	set: setNames.lunar4,
+	attributes: "Corp credits",
+	nriKey: "06068"
+}));
+cards.push(new Card({
+	name: "Changeling",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "Barrier Morph advanceable endRun",
+	nriKey: "06069"
+}));
+cards.push(new Card({
+	name: "Reuse",
+	type: operation,
+	faction: wey,
+	influence: 1,
+	set: setNames.lunar4,
+	attributes: "Double credits",
+	nriKey: "06070"
+}));
+cards.push(new Card({
+	name: "Hades Fragment",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 3,
+	set: setNames.lunar4,
+	attributes: "Source unique recursion",
+	nriKey: "06071"
+}));
+cards.push(new Card({
+	name: "Docklands Crackdown",
+	type: asset,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar4,
+	attributes: "creditDisruption",
+	nriKey: "06072"
+}));
+cards.push(new Card({
+	name: "Inject",
+	type: event,
+	faction: ana,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "credits cards",
+	nriKey: "06073"
+}));
+cards.push(new Card({
+	name: "Origami",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "handSize",
+	nriKey: "06074"
+}));
+cards.push(new Card({
+	name: "Fester",
+	type: resource,
+	faction: ana,
+	influence: 1,
+	set: setNames.lunar4,
+	attributes: "Virtual creditDisruption",
+	nriKey: "06075"
+}));
+cards.push(new Card({
+	name: "Autoscripter",
+	type: hardware,
+	faction: crim,
+	influence: 3,
+	set: setNames.lunar4,
+	attributes: "unique clicks",
+	nriKey: "06076"
+}));
+cards.push(new Card({
+	name: "Switchblade",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "Icebreaker Killer stealthBonus",
+	nriKey: "06077"
+}));
+cards.push(new Card({
+	name: "Trade-In",
+	type: event,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "credits search",
+	nriKey: "06078"
+}));
+cards.push(new Card({
+	name: "Astrolabe",
+	type: hardware,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar4,
+	attributes: "Console unique memory cards",
+	nriKey: "06079"
+}));
+cards.push(new Card({
+	name: "Angel Arena",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar4,
+	attributes: "Location unique",
+	nriKey: "06080"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
