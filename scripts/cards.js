@@ -5101,6 +5101,188 @@ cards.push(new Card({
 	nriKey: "06080"
 }));
 
+// Lunar 5 - All That Remains
+
+cards.push(new Card({
+	name: "Bifrost Array",
+	type: agenda,
+	faction: hb,
+	agendaPoints: 1,
+	set: setNames.lunar5,
+	attributes: "Initiative",
+	nriKey: "06081"
+}));
+cards.push(new Card({
+	name: "Sagittarius",
+	type: ice,
+	faction: hb,
+	influence: 2,
+	set: setNames.lunar5,
+	attributes: "Sentry Tracer Destroyer trace",
+	nriKey: "06082"
+}));
+cards.push(new Card({
+	name: "Hostile Infrastructure",
+	type: asset,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar5,
+	attributes: "netDamage",
+	nriKey: "06083"
+}));
+cards.push(new Card({
+	name: "Gemini",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.lunar5,
+	attributes: "Sentry Tracer AP trace netDamage",
+	nriKey: "06084"
+}));
+cards.push(new Card({
+	name: "License Acquisition",
+	type: agenda,
+	faction: nbn,
+	agendaPoints: 1,
+	set: setNames.lunar5,
+	attributes: "Expansion recursion",
+	nriKey: "06085"
+}));
+cards.push(new Card({
+	name: "Daily Business Show",
+	type: asset,
+	faction: nbn,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "Cast cards",
+	nriKey: "06086"
+}));
+cards.push(new Card({
+	name: "Superior Cyberwalls",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 1,
+	set: setNames.lunar5,
+	attributes: "Security iceBoosting credits",
+	nriKey: "06087"
+}));
+cards.push(new Card({
+	name: "Executive Boot Camp",
+	type: asset,
+	faction: wey,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "search",
+	nriKey: "06088"
+}));
+cards.push(new Card({
+	name: "Lycan",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.lunar5,
+	attributes: "Sentry Destroyer Morph advanceable",
+	nriKey: "06089"
+}));
+cards.push(new Card({
+	name: "Snatch and Grab",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar5,
+	attributes: "GrayOps trace tags",
+	nriKey: "06090"
+}));
+cards.push(new Card({
+	name: "Merlin",
+	type: ice,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "CodeGate Grail AP netDamage",
+	nriKey: "06091"
+}));
+cards.push(new Card({
+	name: "Shell Corporation",
+	type: upgrade,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar5,
+	attributes: "credits",
+	nriKey: "06092"
+}));
+cards.push(new Card({
+	name: "Ekomind",
+	type: hardware,
+	faction: ana,
+	influence: 3,
+	set: setNames.lunar5,
+	attributes: "Console memory",
+	nriKey: "06093"
+}));
+cards.push(new Card({
+	name: "Cerberus \"Cuj.0\" H3",
+	type: program,
+	faction: ana,
+	influence: 3,
+	set: setNames.lunar5,
+	attributes: "Icebreaker Killer",
+	nriKey: "06094"
+}));
+cards.push(new Card({
+	name: "Leela Patel",
+	type: identity,
+	faction: crim,
+	set: setNames.lunar5,
+	attributes: "Natural",
+	nriKey: "06095"
+}));
+cards.push(new Card({
+	name: "Cerberus \"Rex\" H2",
+	type: program,
+	faction: crim,
+	influence: 3,
+	set: setNames.lunar5,
+	attributes: "Icebreaker Decoder",
+	nriKey: "06096"
+}));
+cards.push(new Card({
+	name: "Zona Sul Shipping",
+	type: resource,
+	faction: crim,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "credits tags",
+	nriKey: "06097"
+}));
+cards.push(new Card({
+	name: "Cybsoft MacroDrive",
+	type: hardware,
+	faction: shap,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "recurringCredits",
+	nriKey: "06098"
+}));
+cards.push(new Card({
+	name: "Cerberus \"Lady\" H1",
+	type: program,
+	faction: shap,
+	influence: 3,
+	set: setNames.lunar5,
+	attributes: "Icebreaker Fracter",
+	nriKey: "06099"
+}));
+cards.push(new Card({
+	name: "Utopia Shard",
+	type: resource,
+	faction: neut,
+	influence: 1,
+	set: setNames.lunar5,
+	attributes: "Virtual Source handDisruption",
+	nriKey: "06100"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
