@@ -5283,6 +5283,189 @@ cards.push(new Card({
 	nriKey: "06100"
 }));
 
+// Lunar 6 - The Source
+
+cards.push(new Card({
+	name: "Helium-3 Deposit",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 2,
+	set: setNames.lunar6,
+	attributes: "",
+	nriKey: "06101"
+}));
+cards.push(new Card({
+	name: "Errand Boy",
+	type: ice,
+	faction: wey,
+	influence: 1,
+	set: setNames.lunar6,
+	attributes: "Sentry credits cards",
+	nriKey: "06102"
+}));
+cards.push(new Card({
+	name: "IT Department",
+	type: asset,
+	faction: hb,
+	influence: 1,
+	set: setNames.lunar6,
+	attributes: "iceBoosting",
+	nriKey: "06103"
+}));
+cards.push(new Card({
+	name: "Markus 1.0",
+	type: ice,
+	faction: hb,
+	influence: 1,
+	set: setNames.lunar6,
+	attributes: "Barrier Bioroid trash endRun",
+	nriKey: "06104"
+}));
+cards.push(new Card({
+	name: "Industrial Genomics: Growing Solutions",
+	type: identity,
+	faction: jin,
+	set: setNames.lunar6,
+	attributes: "Division",
+	nriKey: "06105"
+}));
+cards.push(new Card({
+	name: "Turtlebacks",
+	type: asset,
+	faction: jin,
+	influence: 1,
+	set: setNames.lunar6,
+	attributes: "Clone credits",
+	nriKey: "06106"
+}));
+cards.push(new Card({
+	name: "Shoot the Moon",
+	type: operation,
+	faction: nbn,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "Double tags",
+	nriKey: "06107"
+}));
+cards.push(new Card({
+	name: "Troll",
+	type: ice,
+	faction: nbn,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "Sentry trace clickDisruption endRun",
+	nriKey: "06108"
+}));
+cards.push(new Card({
+	name: "Virgo",
+	type: ice,
+	faction: nbn,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "Sentry Tracer trace tags",
+	nriKey: "06109"
+}));
+cards.push(new Card({
+	name: "Utopia Fragment",
+	type: agenda,
+	faction: neut,
+	agendaPoints: 3,
+	influence: 0,
+	set: setNames.lunar6,
+	attributes: "Source",
+	nriKey: "06110"
+}));
+cards.push(new Card({
+	name: "Excalibur",
+	type: ice,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar6,
+	attributes: "Mythic Grail",
+	nriKey: "06111"
+}));
+cards.push(new Card({
+	name: "Self-destruct",
+	type: upgrade,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar6,
+	attributes: "trace netDamage",
+	nriKey: "06112"
+}));
+cards.push(new Card({
+	name: "Incubator",
+	type: program,
+	faction: ana,
+	influence: 3,
+	set: setNames.lunar6,
+	attributes: "Virus virusHelper",
+	nriKey: "06113"
+}));
+cards.push(new Card({
+	name: "Ixodidae",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "Virus credits",
+	nriKey: "06114"
+}));
+cards.push(new Card({
+	name: "Code Siphon",
+	type: event,
+	faction: shap,
+	influence: 4,
+	set: setNames.lunar6,
+	attributes: "Run credits search tags",
+	nriKey: "06115"
+}));
+cards.push(new Card({
+	name: "Collective Consciousness",
+	type: program,
+	faction: shap,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "cards",
+	nriKey: "06116"
+}));
+cards.push(new Card({
+	name: "Sage",
+	type: program,
+	faction: shap,
+	influence: 3,
+	set: setNames.lunar6,
+	attributes: "Icebreaker Decoder Fracter",
+	nriKey: "06117"
+}));
+cards.push(new Card({
+	name: "Bribery",
+	type: event,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "Run",
+	nriKey: "06118"
+}));
+cards.push(new Card({
+	name: "Au Revoir",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.lunar6,
+	attributes: "credits",
+	nriKey: "06119"
+}));
+cards.push(new Card({
+	name: "Earthrise Hotel",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.lunar6,
+	attributes: "Location Ritzy cards",
+	nriKey: "06120"
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });

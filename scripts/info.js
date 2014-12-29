@@ -76,7 +76,7 @@ var corp = "Corporation",
 			lunar3: setNames.lunar3,
 			lunar4: setNames.lunar4,
 			lunar5: setNames.lunar5,
-			// lunar6: setNames.lunar6,
+			lunar6: setNames.lunar6,
 		},
 	}
 
