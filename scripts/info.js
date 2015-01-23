@@ -60,7 +60,7 @@ var corp = "Corporation",
 		"Big Boxes": {
 			cnc: setNames.cnc,
 			hp: setNames.hp,
-			// oc: setNames.oc,
+			oc: setNames.oc,
 		},
 		"Spin Cycle": {
 			spin1: setNames.spin1,

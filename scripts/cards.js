@@ -5466,6 +5466,500 @@ cards.push(new Card({
 	nriKey: "06120"
 }));
 
+// Order & Chaos
+
+cards.push(new Card({
+	name: "Argus Security",
+	type: identity,
+	faction: wey,
+	set: setNames.oc,
+	attributes: "Corp tags meatDamage",
+	nriKey: "07001",
+}));
+cards.push(new Card({
+	name: "Gagarin Deep Space",
+	type: identity,
+	faction: wey,
+	set: setNames.oc,
+	attributes: "Corp",
+	nriKey: "07002",
+}));
+cards.push(new Card({
+	name: "Titan Transnational",
+	type: identity,
+	faction: wey,
+	influenceAvailable: 17,
+	set: setNames.oc,
+	attributes: "Corp",
+	nriKey: "07003",
+}));
+cards.push(new Card({
+	name: "Firmware Updates",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 1,
+	set: setNames.oc,
+	attributes: "Security advancementCounters",
+	nriKey: "07004",
+}));
+cards.push(new Card({
+	name: "Glenn Station",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 2,
+	set: setNames.oc,
+	attributes: "Expansion",
+	nriKey: "07005",
+}));
+cards.push(new Card({
+	name: "Government Takeover",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 6,
+	set: setNames.oc,
+	attributes: "credits",
+	nriKey: "07006",
+}));
+cards.push(new Card({
+	name: "High-Risk Investment",
+	type: agenda,
+	faction: wey,
+	agendaPoints: 3,
+	set: setNames.oc,
+	attributes: "Expansion credits",
+	nriKey: "07007",
+}));
+cards.push(new Card({
+	name: "Constellation Protocol",
+	type: asset,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "advancementCounters",
+	nriKey: "07008",
+}));
+cards.push(new Card({
+	name: "Mark Yale",
+	type: asset,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "Executive unique credits",
+	nriKey: "07009",
+}));
+cards.push(new Card({
+	name: "Space Camp",
+	type: asset,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "Ambush advancementCounters",
+	nriKey: "07010",
+}));
+cards.push(new Card({
+	name: "The Board",
+	type: asset,
+	faction: wey,
+	influence: 5,
+	set: setNames.oc,
+	attributes: "Executive unique",
+	nriKey: "07011",
+}));
+cards.push(new Card({
+	name: "Asteroid Belt",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Barrier advanceable endRun",
+	nriKey: "07012",
+}));
+cards.push(new Card({
+	name: "Wormhole",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "CodeGate advanceable",
+	nriKey: "07013",
+}));
+cards.push(new Card({
+	name: "Nebula",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Sentry Destroyer advanceable trash",
+	nriKey: "07014",
+}));
+cards.push(new Card({
+	name: "Orion",
+	type: ice,
+	faction: wey,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Sentry CodeGate Barrier unique trash endRun",
+	nriKey: "07015",
+}));
+cards.push(new Card({
+	name: "Builder",
+	type: ice,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "CodeGate advancementCounters",
+	nriKey: "07016",
+}));
+cards.push(new Card({
+	name: "Checkpoint",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "CodeGate Tracer Illicit badPublicity trace meatDamage",
+	nriKey: "07017",
+}));
+cards.push(new Card({
+	name: "Fire Wall",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Barrier advanceable endRun",
+	nriKey: "07018",
+}));
+cards.push(new Card({
+	name: "Searchlight",
+	type: ice,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "Sentry advanceable trace tags",
+	nriKey: "07019",
+}));
+cards.push(new Card({
+	name: "Accounting",
+	type: operation,
+	faction: wey,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Current handDisruption",
+	nriKey: "07020",
+}));
+cards.push(new Card({
+	name: "Patch",
+	type: operation,
+	faction: wey,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Condition iceBoosting",
+	nriKey: "07021",
+}));
+cards.push(new Card({
+	name: "Traffic Accident",
+	type: operation,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "BlackOps tags meatDamage",
+	nriKey: "07022",
+}));
+cards.push(new Card({
+	name: "Satellite Grid",
+	type: upgrade,
+	faction: wey,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Region advancementCounters",
+	nriKey: "07023",
+}));
+cards.push(new Card({
+	name: "The Twins",
+	type: upgrade,
+	faction: wey,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "Sysop unique",
+	nriKey: "07024",
+}));
+cards.push(new Card({
+	name: "Sub Boost",
+	type: operation,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "Condition iceBoosting endRun",
+	nriKey: "07025",
+}));
+cards.push(new Card({
+	name: "Dedicated Technician Team",
+	type: upgrade,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "recurringCredits",
+	nriKey: "07026",
+}));
+cards.push(new Card({
+	name: "Cyberdex Virus Suite",
+	type: upgrade,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "Ambush virusHelper",
+	nriKey: "07027",
+}));
+cards.push(new Card({
+	name: "Edward Kim",
+	type: identity,
+	faction: ana,
+	set: setNames.oc,
+	attributes: "Natural link trash handDisruption deckDisruption",
+	nriKey: "07028",
+}));
+cards.push(new Card({
+	name: "MaxX",
+	type: identity,
+	faction: ana,
+	set: setNames.oc,
+	attributes: "G-mod cards",
+	nriKey: "07029",
+}));
+cards.push(new Card({
+	name: "Valencia Estevez",
+	type: identity,
+	faction: ana,
+	minCards: 50,
+	set: setNames.oc,
+	attributes: "Natural badPublicity",
+	nriKey: "07030",
+}));
+cards.push(new Card({
+	name: "Amped Up",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "clicks brainDamage",
+	nriKey: "07031",
+}));
+cards.push(new Card({
+	name: "Steelskin",
+	type: event,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "cards netDamage meatDamage",
+	nriKey: "07032",
+}));
+cards.push(new Card({
+	name: "Itinerant Protesters",
+	type: event,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Current badPublicity handDisruption",
+	nriKey: "07033",
+}));
+cards.push(new Card({
+	name: "Showing Off",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Run",
+	nriKey: "07034",
+}));
+cards.push(new Card({
+	name: "Wanton Destruction",
+	type: event,
+	faction: ana,
+	influence: 4,
+	set: setNames.oc,
+	attributes: "Run Sabotage handDisruption",
+	nriKey: "07035",
+}));
+cards.push(new Card({
+	name: "Day Job",
+	type: event,
+	faction: ana,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "credits",
+	nriKey: "07036",
+}));
+cards.push(new Card({
+	name: "Forked",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Run Sabotage trash iceDisruption",
+	nriKey: "07037",
+}));
+cards.push(new Card({
+	name: "Knifed",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Run Sabotage trash iceDisruption",
+	nriKey: "07038",
+}));
+cards.push(new Card({
+	name: "Spooned",
+	type: event,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Run Sabotage trash iceDisruption",
+	nriKey: "07039",
+}));
+cards.push(new Card({
+	name: "Eater",
+	type: program,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Icebreaker AI",
+	nriKey: "07040",
+}));
+cards.push(new Card({
+	name: "Harbinger",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Virus deckDisruption",
+	nriKey: "07041",
+}));
+cards.push(new Card({
+	name: "Hivemind",
+	type: program,
+	faction: ana,
+	influence: 5,
+	set: setNames.oc,
+	attributes: "Virus unique virusHelper",
+	nriKey: "07042",
+}));
+cards.push(new Card({
+	name: "Progenitor",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Daemon memory virusHelper",
+	nriKey: "07043",
+}));
+cards.push(new Card({
+	name: "Archives Interface",
+	type: hardware,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "",
+	nriKey: "07044",
+}));
+cards.push(new Card({
+	name: "Salvager",
+	type: hardware,
+	faction: ana,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "unique cards tags",
+	nriKey: "07045",
+}));
+cards.push(new Card({
+	name: "MemStrips",
+	type: hardware,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Chip memory virusHelper",
+	nriKey: "07046",
+}));
+cards.push(new Card({
+	name: "Vigil",
+	type: hardware,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Console unique memory cards",
+	nriKey: "07047",
+}));
+cards.push(new Card({
+	name: "Human First",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Connection unique credits",
+	nriKey: "07048",
+}));
+cards.push(new Card({
+	name: "Investigative Journalism",
+	type: resource,
+	faction: ana,
+	influence: 1,
+	set: setNames.oc,
+	attributes: "badPublicity",
+	nriKey: "07049",
+}));
+cards.push(new Card({
+	name: "Sacrificial Clone",
+	type: resource,
+	faction: ana,
+	influence: 4,
+	set: setNames.oc,
+	attributes: "netDamage brainDamage meatDamage tags trash",
+	nriKey: "07050",
+}));
+cards.push(new Card({
+	name: "Stim Dealer",
+	type: resource,
+	faction: ana,
+	influence: 3,
+	set: setNames.oc,
+	attributes: "Connection clicks brainDamage",
+	nriKey: "07051",
+}));
+cards.push(new Card({
+	name: "Virus Breeding Ground",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.oc,
+	attributes: "Virtual virusHelper",
+	nriKey: "07052",
+}));
+cards.push(new Card({
+	name: "Uninstall",
+	type: event,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "recursion",
+	nriKey: "07053",
+}));
+cards.push(new Card({
+	name: "Qianju PT",
+	type: hardware,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "Vehicle tags",
+	nriKey: "07054",
+}));
+cards.push(new Card({
+	name: "Data Folding",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.oc,
+	attributes: "Virtual memory credits",
+	nriKey: "07055",
+}));
+
 cards = cards.sort(function (a, b) {
 	return (a.name > b.name) ? 1 : -1;
 });
