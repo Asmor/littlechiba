@@ -44,6 +44,11 @@ var corp = "Corporation",
 		lunar5: "All That Remains",
 		lunar6: "The Source",
 		oc: "Order & Chaos",
+		sansan1: "The Valley",
+		sansan2: "Breaker Bay",
+		sansan3: "Chrome City",
+		sansan4: "The Underway",
+		sansan5: "Old Hollywood",
 	}, // For backwards compatibility
 	sets = {
 		"Core": {
@@ -78,6 +83,14 @@ var corp = "Corporation",
 			lunar5: setNames.lunar5,
 			lunar6: setNames.lunar6,
 		},
+		"SanSan Cycle": {
+			sansan1: setNames.sansan1,
+			// sansan2: setNames.sansan2,
+			// sansan3: setNames.sansan3,
+			// sansan4: setNames.sansan4,
+			// sansan5: setNames.sansan5,
+			// sansan6: setNames.sansan6,
+		}
 	}
 
 sides[corp] = { name: "Corp", cardTypes: {}, factions: {} };

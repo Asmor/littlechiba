@@ -4058,7 +4058,6 @@ cards.push(new Card({
 }));
 cards.push(new Card({
 	name: "NeoTokyo Grid",
-	name: "NeoTokyoCityGrid",
 	type: upgrade,
 	faction: jin,
 	influence: 2,
@@ -5958,6 +5957,188 @@ cards.push(new Card({
 	set: setNames.oc,
 	attributes: "Virtual memory credits",
 	nriKey: "07055",
+}));
+
+// SanSan 1 - The Valley
+
+cards.push(new Card({
+	name: "Clot",
+	type: program,
+	faction: ana,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Virus",
+	nriKey: "08001"
+}));
+cards.push(new Card({
+	name: "Paige Piper",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Connection cards search",
+	nriKey: "08002"
+}));
+cards.push(new Card({
+	name: "Adjusted Chronotype",
+	type: resource,
+	faction: ana,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Genetics clicks",
+	nriKey: "08003"
+}));
+cards.push(new Card({
+	name: "Spike",
+	type: program,
+	faction: crim,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Icebreaker Fracter Cloud",
+	nriKey: "08004"
+}));
+cards.push(new Card({
+	name: "Enhanced Vision",
+	type: resource,
+	faction: crim,
+	influence: 3,
+	set: setNames.sansan1,
+	attributes: "Genetics handDisruption",
+	nriKey: "08005"
+}));
+cards.push(new Card({
+	name: "Gene Conditioning Shoppe",
+	type: resource,
+	faction: shap,
+	influence: 1,
+	set: setNames.sansan1,
+	attributes: "Location",
+	nriKey: "08006"
+}));
+cards.push(new Card({
+	name: "Synthetic Blood",
+	type: resource,
+	faction: shap,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Genetics cards",
+	nriKey: "08007"
+}));
+cards.push(new Card({
+	name: "Traffic Jam",
+	type: event,
+	faction: neut,
+	influence: 0,
+	set: setNames.sansan1,
+	attributes: "Current",
+	nriKey: "08008"
+}));
+cards.push(new Card({
+	name: "Symmetrical Visage",
+	type: resource,
+	faction: neut,
+	influence: 0,
+	set: setNames.sansan1,
+	attributes: "Genetics credits",
+	nriKey: "08009"
+}));
+cards.push(new Card({
+	name: "Brain-Taping Warehouse",
+	type: asset,
+	faction: hb,
+	influence: 1,
+	set: setNames.sansan1,
+	attributes: "Facility",
+	nriKey: "08010"
+}));
+cards.push(new Card({
+	name: "NEXT Gold",
+	type: ice,
+	faction: hb,
+	influence: 3,
+	set: setNames.sansan1,
+	attributes: "Sentry NEXT AP Destroyer netDamage trash",
+	nriKey: "08011"
+}));
+cards.push(new Card({
+	name: "Jinteki Biotech: Life imagined",
+	type: identity,
+	faction: jin,
+	set: setNames.sansan1,
+	attributes: "Division",
+	nriKey: "08012"
+}));
+cards.push(new Card({
+	name: "Genetic Resequencing",
+	type: agenda,
+	faction: jin,
+	agendaPoints: 1,
+	set: setNames.sansan1,
+	attributes: "Research",
+	nriKey: "08013"
+}));
+cards.push(new Card({
+	name: "Cortex Lock",
+	type: ice,
+	faction: jin,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Sentry AP netDamage",
+	nriKey: "08014"
+}));
+cards.push(new Card({
+	name: "Valley Grid",
+	type: upgrade,
+	faction: jin,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Region handDisruption",
+	nriKey: "08015"
+}));
+cards.push(new Card({
+	name: "Bandwidth",
+	type: ice,
+	faction: nbn,
+	influence: 1,
+	set: setNames.sansan1,
+	attributes: "CodeGate tags",
+	nriKey: "08016"
+}));
+cards.push(new Card({
+	name: "Predictive Algorithm",
+	type: operation,
+	faction: nbn,
+	influence: 1,
+	set: setNames.sansan1,
+	attributes: "Current creditDisruption",
+	nriKey: "08017"
+}));
+cards.push(new Card({
+	name: "Capital Investors",
+	type: asset,
+	faction: wey,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "credits",
+	nriKey: "08018"
+}));
+cards.push(new Card({
+	name: "Negotiator",
+	type: ice,
+	faction: wey,
+	influence: 2,
+	set: setNames.sansan1,
+	attributes: "Sentry Destroyer credits trash",
+	nriKey: "08019"
+}));
+cards.push(new Card({
+	name: "Tech Startup",
+	type: asset,
+	faction: neut,
+	influence: 0,
+	set: setNames.sansan1,
+	attributes: "search",
+	nriKey: "08020"
 }));
 
 cards = cards.sort(function (a, b) {
