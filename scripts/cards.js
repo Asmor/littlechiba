@@ -5637,7 +5637,7 @@ cards.push(new Card({
 	nriKey: "07019",
 }));
 cards.push(new Card({
-	name: "Accounting",
+	name: "Housekeeping",
 	type: operation,
 	faction: wey,
 	influence: 3,
@@ -5743,7 +5743,7 @@ cards.push(new Card({
 	nriKey: "07031",
 }));
 cards.push(new Card({
-	name: "Steelskin",
+	name: "I've Had Worse",
 	type: event,
 	faction: ana,
 	influence: 2,
@@ -5824,7 +5824,7 @@ cards.push(new Card({
 	nriKey: "07040",
 }));
 cards.push(new Card({
-	name: "Harbinger",
+	name: "Gravedigger",
 	type: program,
 	faction: ana,
 	influence: 2,
@@ -5860,7 +5860,7 @@ cards.push(new Card({
 	nriKey: "07044",
 }));
 cards.push(new Card({
-	name: "Salvager",
+	name: "Chop Bot 3000",
 	type: hardware,
 	faction: ana,
 	influence: 1,
