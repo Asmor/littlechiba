@@ -17,7 +17,6 @@ function cardController($scope) {
 	$scope.decks = window.vault.getDecks();
 	$scope.previewLink = "";
 	// $scope.setCheckState = {};
-	$scope.sets = sets;
 	$scope.showAttributes = false;
 	$scope.showSets = false;
 	$scope.sides = sides;
