@@ -16,7 +16,7 @@
 </head>
 <body ng-controller="cardController" style="min-height: {{ bodyHeight }}px">
 	<div id="controls">
-		<div class="menuOption dropdownContainer">
+<!-- 		<div class="menuOption dropdownContainer">
 			<div class="dropdownHeader">Select Sets</div>
 			<div class="dropdownBody" id="setDropdown">
 				<ul class="cycleList" ng-repeat="(cycleName, set) in sets">
@@ -34,7 +34,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<div class="menuOption dropdownContainer">
 			<div class="dropdownHeader">
 				Manage decks
@@ -174,9 +174,6 @@
 					<span class="filterContainerHeader">Filter...</span>
 					<div class="filterList round">
 						<div class="filterGroup" ng-repeat="(filterType, filterHash) in side.filters">
-							<span class="filterHeader">
-								{{ filterType }}
-							</span>
 							<div class="filterColumns">
 								<label ng-repeat="(className, hash) in filterHash" class="filterLabel">
 									<input type="checkbox" ng-model="side.checkState[className]"> {{ hash.name }}
@@ -203,7 +200,8 @@
 		<tr ng-repeat="type in side.cardTypes">
 			<td class="cardTypeName">{{ type }}</td>
 			<td ng-repeat="faction in side.factions" class="faction{{ faction }}">
-				<div ng-repeat="card in getCards(faction, type)" class="cardTableCardEntry shown-{{isFiltered(card)}} {{ card.type }} {{ card.att }}">
+				<div ng-repeat="card in getCards(faction, type)" class="cardTableCardEntry shown-{{isFiltered(card)}} {{ card.type }}">
+					<!-- TODO: Removed attributes from class in this containing div-->
 					<button class="btn btn-mini btn-success qty{{getQty(card)}} add addable-{{ isAddable(card) }}" ng-click="addCard(card)"><i class="icon-plus"></i></button>
 					<div ng-click="previewClick(card)" ng-mouseover="previewHover(card)" class="cardTableCardInfo">
 						<div class="cardName">

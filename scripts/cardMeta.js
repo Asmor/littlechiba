@@ -4,40 +4,14 @@ var a, c, i, j, s, t,
 	// cssSelectors = [],
 	css = document.createElement("style");
 
+var cards = [];
+
 sides[corp].filters = {
-	"Attributes": {},
-	"Keywords": {}
+	"Attributes": {}
 };
 sides[runner].filters = {
-	"Attributes": {},
-	"Keywords": {}
+	"Attributes": {}
 };
-
-for (i = 0; i < cards.length; i++) {
-	c = cards[i];
-
-	// Build the index
-	cardIndices[c.name] = i;
-	cardIndices[c.nriKey] = i;
-
-	// Build the list of filters
-	s = c.side;
-
-	a = c.att.split(" ");
-
-	for (j = 0; j < a.length; j++) {
-		if (a[j] === "") { continue; }
-		if (sides[s].filters[a[j]]) { continue; }
-		friendlyName = getAttributeFriendlyName(a[j]);
-		// If the term starts with a capital letter, it's a keyword from the card; otherwise it's an attribute I made up
-		if (a[j].match(/^[A-Z]/)) {
-			t = "Keywords";
-		} else {
-			t = "Attributes";
-		}
-		sides[s].filters[t][a[j]] = { name: friendlyName, className: a[j], type: t };
-	}
-}
 
 function getCardByNameOrId(name) {
 	if (!name) {
@@ -51,12 +25,6 @@ function getCardByNameOrId(name) {
 		return cards[cardIndices[name]];
 	}
 	return null;
-}
-
-function getAttributeFriendlyName(att) {
-	var split = att.split(/(?=\B[A-Z][a-z])/).join(" "); // Break up camel case
-	split = split.substring(0,1).toUpperCase() + split.substring(1); // Make sure first letter is capitalized
-	return split;
 }
 
 function fuzzyMatch(name) {

@@ -16,7 +16,7 @@ body {
 	font-weight: bold;
 	font-size: large;
 }
-.factionAnarchs,
+.factionAnarch,
 .template_Anarch {
 	background-color: #F6BCA4;
 }
@@ -24,7 +24,7 @@ body {
 	font-family: ana;
 	src: url(BRUSHOFANARCHYOUTLINE.ttf);
 }
-.factionHeader.factionAnarchs {
+.factionHeader.factionAnarch {
 	font-family: ana;
 	font-size: large;
 }
@@ -40,7 +40,7 @@ body {
 	font-family: crim;
 	font-size: x-large;
 }
-.factionShapers,
+.factionShaper,
 .template_Shaper {
 	background-color: #CBD5BD;
 }
@@ -48,7 +48,7 @@ body {
 	font-family: shap;
 	src: url(DEREZ___.TTF);
 }
-.factionHeader.factionShapers {
+.factionHeader.factionShaper {
 	font-family: shap;
 	font-size: x-large;
 }
@@ -442,8 +442,8 @@ body {
 	padding: 0;
 }
 #deck.factionCriminal     .card.factionCriminal     .influence,
-#deck.factionShapers      .card.factionShapers      .influence,
-#deck.factionAnarchs      .card.factionAnarchs      .influence,
+#deck.factionShaper       .card.factionShaper       .influence,
+#deck.factionAnarch       .card.factionAnarch       .influence,
 #deck.factionNBN          .card.factionNBN          .influence,
 #deck.factionJinteki      .card.factionJinteki      .influence,
 #deck.factionHaas-Bioroid .card.factionHaas-Bioroid .influence,

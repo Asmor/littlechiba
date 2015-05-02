@@ -16,7 +16,7 @@ function cardController($scope) {
 	$scope.deck = new Deck();
 	$scope.decks = window.vault.getDecks();
 	$scope.previewLink = "";
-	$scope.setCheckState = {};
+	// $scope.setCheckState = {};
 	$scope.sets = sets;
 	$scope.showAttributes = false;
 	$scope.showSets = false;
@@ -36,14 +36,14 @@ function cardController($scope) {
 	Ajax.getAllCards();
 
 	var i, j;
-	for (i in $scope.sets) {
-		if (!$scope.sets.hasOwnProperty(i)) { continue; }
-		for (j in $scope.sets[i]) {
-			if ($scope.sets[i].hasOwnProperty(j)) {
-				$scope.setCheckState[$scope.sets[i][j]] = true;
-			}
-		}
-	}
+	// for (i in $scope.sets) {
+	// 	if (!$scope.sets.hasOwnProperty(i)) { continue; }
+	// 	for (j in $scope.sets[i]) {
+	// 		if ($scope.sets[i].hasOwnProperty(j)) {
+	// 			$scope.setCheckState[$scope.sets[i][j]] = true;
+	// 		}
+	// 	}
+	// }
 
 	$scope._persist = function () {
 		// Note to self: If you're looking for how to force an update, use scope.$apply(). Don't use that inside the cardController, though.
@@ -100,7 +100,7 @@ function cardController($scope) {
 		var toReturn = [],
 			attributes = [],
 			i,
-			a = card.att.split(" ");
+			a = card.att;
 		
 		if (card.type === agenda) {
 			toReturn.push(card.agendaPoints + " points");
@@ -109,11 +109,7 @@ function cardController($scope) {
 		}
 
 		for (i = 0; i < a.length; i++) {
-			if (a[i].match(/^[A-Z]/)) {
-				toReturn.push(getAttributeFriendlyName(a[i])); // Change from CamelCase to proper spacing. Careful not to split up acronyms, e.g. "AP"
-			} else {
-				attributes.push(getAttributeFriendlyName(a[i]));
-			}
+			toReturn.push(a[i]);
 		}
 
 		if (card.qty !== 3) {
@@ -197,15 +193,15 @@ function cardController($scope) {
 	};
 	$scope.isFiltered = function (card) {
 		var i,
-			types = card.att.split(" "),
+			types = card.att,
 			anyFilter = false,
 			thisFilter = false,
 			filterState = sides[card.side].checkState;
 
 		// If this card's set is unchecked, it should always be hidden
-		if (!$scope.setCheckState[card.set]) {
-			return false;
-		}
+		// if (!$scope.setCheckState[card.set]) {
+		// 	return false;
+		// }
 
 		// If an identity of this card's faction is chosen,
 		// and this card is from a different faction,
@@ -242,16 +238,16 @@ function cardController($scope) {
 		$scope.deck.name = deck.name;
 		$scope.setBase(deck);
 	};
-	$scope.massToggle = function (block, checked) {
-		var sets = scope.sets[block],
-			setKey, setName;
+	// $scope.massToggle = function (block, checked) {
+	// 	var sets = scope.sets[block],
+	// 		setKey, setName;
 
-		for (setKey in sets) {
-			if (!sets.hasOwnProperty(setKey)) { continue; }
-			setName = sets[setKey];
-			$scope.setCheckState[setName] = checked;
-		}
-	};
+	// 	for (setKey in sets) {
+	// 		if (!sets.hasOwnProperty(setKey)) { continue; }
+	// 		setName = sets[setKey];
+	// 		$scope.setCheckState[setName] = checked;
+	// 	}
+	// };
 	$scope.newDeck = function (deck) {
 		$scope.deck.reset();
 		$scope.deck.name = null;
@@ -268,15 +264,11 @@ function cardController($scope) {
 	$scope.previewSet = function (card) {
 		var data;
 		if (typeof card === "string") {
-			if (card.match(/^\d{5}$/)) {
-				data = foreignCardData[card]
+			card = getCardByNameOrId(card);
+			if (card) {
+				data = card.getData();
 			} else {
-				card = getCardByNameOrId(card);
-				if (card) {
-					data = card.getData()
-				} else {
-					return;
-				}
+				return;
 			}
 		} else {
 			data = card.getData();
